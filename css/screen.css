@@ -1,0 +1,262 @@
+/* line 17, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-0.12.5/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+/* line 3, ../sass/screen.scss */
+body, html {
+  height: 100%;
+  font-family: arial;
+  min-width: 530px;
+  background-color: white; }
+  /* line 8, ../sass/screen.scss */
+  body.framed-tablet-v, html.framed-tablet-v {
+    min-width: 1000px; }
+  /* line 11, ../sass/screen.scss */
+  body.framed-tablet-h, html.framed-tablet-h {
+    min-width: 1300px; }
+  /* line 14, ../sass/screen.scss */
+  body.framed-mobile, html.framed-mobile {
+    min-width: 550px; }
+
+/* line 18, ../sass/screen.scss */
+.hide {
+  display: none; }
+
+/* line 21, ../sass/screen.scss */
+#header {
+  position: relative;
+  height: 80px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 530px;
+  background-color: black;
+  z-index: 10;
+  -webkit-box-shadow: 0 -2px 0 white inset;
+  -moz-box-shadow: 0 -2px 0 white inset;
+  box-shadow: 0 -2px 0 white inset; }
+  /* line 31, ../sass/screen.scss */
+  #header a.btn {
+    color: white;
+    text-transform: uppercase;
+    background-color: #282828;
+    padding: 10px 15px 10px 50px;
+    border: solid 1px #999999;
+    font-size: .75em;
+    font-weight: normal;
+    text-decoration: none;
+    float: right;
+    position: relative;
+    top: 16px;
+    margin-right: 18px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px; }
+    /* line 45, ../sass/screen.scss */
+    #header a.btn:hover {
+      background-color: #484848; }
+    @media (max-width: 900px) {
+      /* line 31, ../sass/screen.scss */
+      #header a.btn {
+        display: none; } }
+  /* line 52, ../sass/screen.scss */
+  #header .btn-download {
+    background: url("../img/btn-download.png") 8px center no-repeat; }
+  /* line 55, ../sass/screen.scss */
+  #header .btn-explore {
+    background: url("../img/btn-explore.png") 20px center no-repeat; }
+
+/* line 59, ../sass/screen.scss */
+#logo img {
+  position: relative;
+  top: 10px;
+  left: 15px;
+  float: left;
+  height: 55px;
+  margin-right: 30px; }
+
+/* line 67, ../sass/screen.scss */
+#devices {
+  float: left;
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+  /* line 72, ../sass/screen.scss */
+  #devices li {
+    display: inline-block;
+    float: left;
+    margin-right: 10px; }
+    /* line 76, ../sass/screen.scss */
+    #devices li a {
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+      opacity: 0.6; }
+      /* line 79, ../sass/screen.scss */
+      #devices li a.active, #devices li a:hover {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        opacity: 1; }
+
+/* line 85, ../sass/screen.scss */
+#devices a, #devices a img {
+  text-decoration: none;
+  border: none; }
+
+/* line 89, ../sass/screen.scss */
+#loadingMessage {
+  position: fixed;
+  top: 150px;
+  display: block;
+  padding: 4px;
+  background-color: white;
+  left: calc(50% - 40px/2);
+  z-index: 9999;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 15px black;
+  -moz-box-shadow: 0 0 15px black;
+  box-shadow: 0 0 15px black; }
+
+/* line 101, ../sass/screen.scss */
+#iframe-container {
+  position: relative;
+  z-index: 9;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  /* line 105, ../sass/screen.scss */
+  #iframe-container #iframe-wrapper {
+    margin: 0 auto;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+    /* line 108, ../sass/screen.scss */
+    #iframe-container #iframe-wrapper iframe {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: #333333;
+      -webkit-transition: all 0.1s ease-out;
+      -moz-transition: all 0.1s ease-out;
+      -o-transition: all 0.1s ease-out;
+      transition: all 0.1s ease-out; }
+
+/* line 117, ../sass/screen.scss */
+#iframe-container.desktop {
+  height: calc(100% - 85px);
+  width: 100%; }
+  /* line 120, ../sass/screen.scss */
+  #iframe-container.desktop #iframe-wrapper {
+    width: 100%;
+    height: 100%; }
+    /* line 123, ../sass/screen.scss */
+    #iframe-container.desktop #iframe-wrapper iframe {
+      top: 0; }
+
+/* line 128, ../sass/screen.scss */
+#iframe-container.tablet-h {
+  top: 20px;
+  height: 1090px;
+  width: 100%;
+  background: url(../img/view-tablet-h.png) top center no-repeat; }
+  /* line 133, ../sass/screen.scss */
+  #iframe-container.tablet-h #iframe-wrapper {
+    display: block;
+    width: 1024px;
+    height: 768px; }
+    /* line 137, ../sass/screen.scss */
+    #iframe-container.tablet-h #iframe-wrapper iframe {
+      top: 105px; }
+
+/* line 142, ../sass/screen.scss */
+#iframe-container.tablet-v {
+  top: 10px;
+  height: 1345px;
+  width: 100%;
+  background: url(../img/view-tablet-v.png) top center no-repeat; }
+  /* line 147, ../sass/screen.scss */
+  #iframe-container.tablet-v #iframe-wrapper {
+    display: block;
+    width: 768px;
+    height: 1024px; }
+    /* line 151, ../sass/screen.scss */
+    #iframe-container.tablet-v #iframe-wrapper iframe {
+      top: 130px; }
+
+/* line 156, ../sass/screen.scss */
+#iframe-container.mobile {
+  top: 10px;
+  height: 910px;
+  width: 100%;
+  background: url(../img/view-mobile.png) top center no-repeat; }
+  /* line 161, ../sass/screen.scss */
+  #iframe-container.mobile #iframe-wrapper {
+    display: block;
+    height: 595px;
+    width: 335px;
+    position: relative; }
+    /* line 166, ../sass/screen.scss */
+    #iframe-container.mobile #iframe-wrapper iframe {
+      top: 149px; }

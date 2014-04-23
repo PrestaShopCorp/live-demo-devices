@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="robots" CONTENT="noindex, nofollow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<title>Prestashop Demo</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<link rel="stylesheet" href="css/screen.css">
+		<link rel="stylesheet" href="scripts/tinyscrollbar/tinyscrollbar.css" type="text/css" media="screen"/>
+		<script>
+			function removeLoading(){
+				$('.loading').removeClass('loading');
+			}
+			$(function(){
+				var init = $('.btn-explore-front').attr('href');
+				$("#framelive").attr("src", init);
+				$('#framelive').load(function () {
+					$('#loadingMessage').css('display', 'none');
+				});
+				$('#header a.btn-explore').on('click', function(e){
+					e.preventDefault();
+					var explore = $(this).attr('href');
+					$("#framelive").attr("src", explore);
+					$('#header a.btn-explore').siblings('a.btn-explore').toggleClass('hide');
+				});
+				$('#devices').on('click','.change-device',function(){
+					var device = $(this).data('target');
+					$('.change-device').removeClass('active');
+					$(this).addClass('active');
+					$('#iframe-container').removeClass().addClass(device).find('iframe'); //.addClass('loading');
+					var $loadingElement = $('#iframe-wrapper');
+					//window.setTimeout(removeLoading, 500);
+					$('body').removeClass().addClass('framed-' + device);
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="header">
+			<div id="logo" class="block_header">
+				<img src="img/logo_prestashop.png" />
+			</div>
+			<ul id="devices">
+				<li>
+					<a href="#" class='change-device active' data-target='desktop' >
+						<img src='img/desktop.png' alt='Desktop' />
+					</a>
+				</li>
+				<li>
+					<a href="#" class='change-device' data-target='tablet-h'>
+						<img src='img/tablet-h.png' alt='Tablet' />
+					</a>
+				</li>
+				<li>
+					<a href="#" class='change-device' data-target='tablet-v'>
+						<img src='img/tablet-v.png' alt='Tablet' />
+					</a>
+				</li>
+				<li>
+					<a href="#" class='change-device' data-target='mobile'>
+						<img src='img/mobile.png' alt='Smartphone' />
+					</a>
+				</li>
+			</ul>
+			<a class="btn btn-download" href="#">Download<br>PrestaShop</a>
+			<a class="btn btn-explore btn-explore-bo" href="http://demo-bo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo@prestashop.com&password=prestashop_demo">Explore<br>Back Office</a>
+			<a class="btn btn-explore btn-explore-front hide" href="http://demo-store.prestashop.com/">Explore<br>Front Office</a>
+		</div>
+		<div id="iframe-container" class="desktop">
+			<div id="iframe-wrapper">
+				<div id="loadingMessage"><img src="img/loading.gif" alt=""></div>
+				<iframe id="framelive" name="framelive" src=""></iframe>
+			</div>
+		</div>
+	</body>
+</html>
