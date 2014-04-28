@@ -38,11 +38,11 @@
 			<a class="btn btn-explore btn-explore-bo" data-view="back" href="http://demo-bo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo@prestashop.com&password=prestashop_demo">Explore<br>Back Office</a>
 			<a class="btn btn-explore btn-explore-front hide" data-view="front" href="http://demo-store.prestashop.com/">Explore<br>Front Office</a>
 		</div>
-		<a class="btn btn-collapse" href="#">Close</a>
+		<a class="btn btn-collapse" href="javascript:void(0);"></a>
 		<div id="iframe-container" class="desktop">
 			<div id="iframe-wrapper">
 				<div id="loadingMessage"><img src="img/loading.gif" alt="loading"></div>
-				<iframe id="framelive" name="framelive" src=""></iframe>
+				<iframe id="framelive" name="framelive"></iframe>
 			</div>
 		</div>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -107,6 +107,7 @@
 
 				$('.btn-collapse').on('click',function(){
 					$('#header').toggle();
+					$(this).toggleClass('collapsed');
 				});
 
 				$(window).resize(function(){
