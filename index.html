@@ -10,26 +10,26 @@
 	<body>
 		<div id="header">
 			<div id="logo" class="block_header">
-				<img src="img/logo_prestashop.png" />
+				<a href="http://demo.prestashop.com/"><img src="img/logo_prestashop.png" /></a>
 			</div>
 			<ul id="devices">
 				<li>
-					<a href="#" class='change-device active' data-target='desktop' >
+					<a href="javascript:void(0);" class='change-device active' data-target='desktop' >
 						<img src='img/desktop.png' alt='Desktop' />
 					</a>
 				</li>
 				<li>
-					<a href="#" class='change-device' data-target='tablet-h'>
+					<a href="javascript:void(0);" class='change-device' data-target='tablet-h'>
 						<img src='img/tablet-h.png' alt='Tablet' />
 					</a>
 				</li>
 				<li>
-					<a href="#" class='change-device' data-target='tablet-v'>
+					<a href="javascript:void(0);" class='change-device' data-target='tablet-v'>
 						<img src='img/tablet-v.png' alt='Tablet' />
 					</a>
 				</li>
 				<li>
-					<a href="#" class='change-device' data-target='mobile'>
+					<a href="javascript:void(0);" class='change-device' data-target='mobile'>
 						<img src='img/mobile.png' alt='Smartphone' />
 					</a>
 				</li>
@@ -37,11 +37,11 @@
 			<a class="btn btn-download" target="_blank" href="http://www.prestashop.com/en/download">Download<br>PrestaShop</a>
 			<a class="btn btn-explore btn-explore-bo" data-view="back" href="http://demo-bo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo@prestashop.com&password=prestashop_demo">Explore<br>Back Office</a>
 			<a class="btn btn-explore btn-explore-front hide" data-view="front" href="http://demo-store.prestashop.com/">Explore<br>Front Office</a>
-			<a class="btn btn-collapse" href="#">Close</a>
 		</div>
+		<a class="btn btn-collapse" href="#">Close</a>
 		<div id="iframe-container" class="desktop">
 			<div id="iframe-wrapper">
-				<div id="loadingMessage"><img src="img/loading.gif" alt=""></div>
+				<div id="loadingMessage"><img src="img/loading.gif" alt="loading"></div>
 				<iframe id="framelive" name="framelive" src=""></iframe>
 			</div>
 		</div>
@@ -52,6 +52,7 @@
 				function removeLoading(){
 					$('.loading').removeClass('loading');
 				}
+
 				function getUrlVars(){
 					var vars = [], hash;
 					var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
@@ -63,35 +64,37 @@
 					}
 					return vars;
 				}
+
 				var params = getUrlVars();
 				var init = $('.btn-explore-front');
+
 				if (typeof params.view !== undefined){
+					console.log(params.view);
 					switch (params.view) {
-						case 'front':
-							var init = $('.btn-explore-front');
-							break;
 						case 'back':
-							var init = $('.btn-explore-back');
+							init = $('.btn-explore-bo');
 							break;
 						default:
-							var init = $('.btn-explore-front');
+							init = $('.btn-explore-front');
 							break;
 					}
 				}
-				$("#framelive").attr("src", init.attr('href'));
-				history.pushState({}, '', '/?view=' + init.data("view"));
 
+				$("#framelive").attr("src", init.attr('href'));
+				history.pushState({}, '', '?view=' + init.data("view"));
 				$('#framelive').load(function () {
 					$('#loadingMessage').css('display', 'none');
 				});
+
 				$('#header a.btn-explore').on('click', function(e){
 					e.preventDefault();
 					var explore = $(this).attr('href');
 					$("#framelive").attr("src", explore);
 					$('#header a.btn-explore').siblings('a.btn-explore').toggleClass('hide');
-					history.pushState({}, '', '/?view=' + $(this).data("view"));
+					history.pushState({}, '', '?view=' + $(this).data("view"));
 					return false;
 				});
+
 				$('#devices').on('click','.change-device',function(){
 					var device = $(this).data('target');
 					$('.change-device').removeClass('active');
@@ -100,7 +103,17 @@
 					var $loadingElement = $('#iframe-wrapper');
 					//window.setTimeout(removeLoading, 500);
 					$('body').removeClass().addClass('framed-' + device);
-				})
+				});
+
+				$('.btn-collapse').on('click',function(){
+					$('#header').toggle();
+				});
+
+				$(window).resize(function(){
+					if ($(window).width() <= 1000){
+						$('a[data-target=desktop]').trigger('click');
+					}	
+				});
 			})
 		</script>
 	</body>
