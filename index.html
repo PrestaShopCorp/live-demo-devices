@@ -5,6 +5,7 @@
 		<meta name="robots" CONTENT="noindex, nofollow">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<title>Prestashop Demo</title>
+		<meta name="description" content="Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop." />
 		<link rel="stylesheet" href="css/screen.css">
 	</head>
 	<body>
@@ -95,17 +96,16 @@
 					return false;
 				});
 
-				$('#devices').on('click','.change-device',function(){
+				$('#devices').on('click', '.change-device', function(){
 					var device = $(this).data('target');
 					$('.change-device').removeClass('active');
 					$(this).addClass('active');
-					$('#iframe-container').removeClass().addClass(device).find('iframe'); //.addClass('loading');
+					$('#iframe-container').removeClass().addClass(device).find('iframe');
 					var $loadingElement = $('#iframe-wrapper');
-					//window.setTimeout(removeLoading, 500);
 					$('body').removeClass().addClass('framed-' + device);
 				});
 
-				$('.btn-collapse').on('click',function(){
+				$('.btn-collapse').on('click', function(){
 					$('#header').toggle();
 					$(this).toggleClass('collapsed');
 				});
@@ -116,9 +116,7 @@
 					}	
 				});
 			})
-		</script>
-
-		<script>
+			
 			dataLayer = [];
 		</script>
 		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WHRX84"
