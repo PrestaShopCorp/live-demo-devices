@@ -37,7 +37,7 @@ function translate($s)
 	<body>
 		<div id="header">
 			<div id="logo" class="block_header">
-				<a href="http://demo.prestashop.com/"><img src="img/logo_prestashop.png" /></a>
+				<a href="http://demo.prestashop.com/"><img src="/img/logo_prestashop.png" /></a>
 			</div>
 			<ul id="devices">
 				<li>
