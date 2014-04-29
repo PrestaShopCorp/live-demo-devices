@@ -50,15 +50,15 @@ body, html{
 		}
 	}
 	.btn-download{
-		background: url('../img/btn-download.png') 8px center no-repeat 
+		background: url('/img/btn-download.png') 8px center no-repeat 
 	}
 	.btn-explore{
-		background: url('../img/btn-explore.png') 20px center no-repeat 
+		background: url('/img/btn-explore.png') 20px center no-repeat 
 	}
 }
 .btn-collapse{
 	position: absolute;
-	background: url('../img/collapse.png') center -5px no-repeat white;
+	background: url('/img/collapse.png') center -5px no-repeat white;
 	top: 78px;
 	left: 15px;
 	width: 50px;
@@ -68,7 +68,7 @@ body, html{
 	@include border-radius(2px);
 	&.collapsed{
 		height: 40px;
-		background: url('../img/collapse.png') center -40px no-repeat white;
+		background: url('/img/collapse.png') center -40px no-repeat white;
 		top: -5px;
 	}
 }
@@ -155,7 +155,7 @@ body, html{
 	top: 20px;
 	height: 1090px;
 	width: 100%;
-	background: url(../img/view-tablet-h.png) top center no-repeat;
+	background: url(/img/view-tablet-h.png) top center no-repeat;
 	#iframe-wrapper{
 		display: block;
 		width: 1024px;
@@ -169,7 +169,7 @@ body, html{
 	top: 10px;
 	height: 1345px;
 	width: 100%;
-	background: url(../img/view-tablet-v.png) top center no-repeat;
+	background: url(/img/view-tablet-v.png) top center no-repeat;
 	#iframe-wrapper{
 		display: block;
 		width: 768px;
@@ -183,7 +183,7 @@ body, html{
 	top: 10px;
 	height: 910px;
 	width: 100%;
-	background: url(../img/view-mobile.png) top center no-repeat;
+	background: url(/img/view-mobile.png) top center no-repeat;
 	#iframe-wrapper{
 		display: block;
 		height: 595px;

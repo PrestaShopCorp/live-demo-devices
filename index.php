@@ -1,12 +1,38 @@
-<!DOCTYPE html>
+<?php
+
+global $iso_lang, $translations;
+$iso_lang = (isset($_GET['iso_lang']) && in_array($_GET['iso_lang'], array('fr', 'en'))) ? $_GET['iso_lang'] : 'en';
+$translations = array(
+	'fr' => array(
+		'PrestaShop Demo' => 'Demo PrestaShop',
+		'Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop.' => 'Vous cherchez un logiciel e-commerce simple et puissant ? Essayez PrestaShop dès maintenant aux formats web, mobile et tablette.',
+		'Desktop' => 'Web',
+		'Tablet' => 'Tablette',
+		'Smartphone' => 'Mobile',
+		'Explore<br>Front Office' => 'Explorez<br>la boutique',
+		'Explore<br>Back Office' => 'Explorez le<br>Panneau d\'administration',
+		'Download<br>PrestaShop' => 'Téléchargez<br>PrestaShop',
+		'' => '',
+	),
+);
+function translate($s)
+{
+	global $iso_lang, $translations;
+	if ($iso_lang == 'en' || !isset($translations[$iso_lang][$s]))
+		echo $s;
+	else
+		echo $translations[$iso_lang][$s];
+}
+
+?><!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="robots" CONTENT="noindex, nofollow">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-		<title>Prestashop Demo</title>
-		<meta name="description" content="Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop." />
-		<link rel="stylesheet" href="css/screen.css">
+		<title><?php translate('Prestashop Demo') ?></title>
+		<meta name="description" content="<?php translate('Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop.') ?>" />
+		<link rel="stylesheet" href="/css/screen.css">
 	</head>
 	<body>
 		<div id="header">
@@ -16,28 +42,28 @@
 			<ul id="devices">
 				<li>
 					<a href="javascript:void(0);" class='change-device active' data-target='desktop' >
-						<img src='img/desktop.png' alt='Desktop' />
+						<img src='/img/desktop.png' alt='<?php translate('Desktop') ?>' />
 					</a>
 				</li>
 				<li>
 					<a href="javascript:void(0);" class='change-device' data-target='tablet-h'>
-						<img src='img/tablet-h.png' alt='Tablet' />
+						<img src='/img/tablet-h.png' alt='<?php translate('Tablet') ?>' />
 					</a>
 				</li>
 				<li>
 					<a href="javascript:void(0);" class='change-device' data-target='tablet-v'>
-						<img src='img/tablet-v.png' alt='Tablet' />
+						<img src='/img/tablet-v.png' alt='<?php translate('Tablet') ?>' />
 					</a>
 				</li>
 				<li>
 					<a href="javascript:void(0);" class='change-device' data-target='mobile'>
-						<img src='img/mobile.png' alt='Smartphone' />
+						<img src='/img/mobile.png' alt='<?php translate('Smartphone') ?>' />
 					</a>
 				</li>
 			</ul>
-			<a class="btn btn-download" target="_blank" href="http://www.prestashop.com/en/download">Download<br>PrestaShop</a>
-			<a class="btn btn-explore btn-explore-bo" data-view="back" href="http://demo-bo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo@prestashop.com&password=prestashop_demo">Explore<br>Back Office</a>
-			<a class="btn btn-explore btn-explore-front hide" data-view="front" href="http://demo-store.prestashop.com/">Explore<br>Front Office</a>
+			<a class="btn btn-download" target="_blank" href="http://www.prestashop.com/en/download"><?php translate('Download<br>PrestaShop') ?></a>
+			<a class="btn btn-explore btn-explore-bo" data-view="back" href="http://demo-bo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo<?php if ($iso_lang != 'en') echo $iso_lang; ?>@prestashop.com&password=prestashop_demo"><?php translate('Explore<br>Back Office') ?></a>
+			<a class="btn btn-explore btn-explore-front hide" data-view="front" href="http://demo-store.prestashop.com/<?php echo $iso_lang ?>/"><?php translate('Explore<br>Front Office') ?></a>
 		</div>
 		<a class="btn btn-collapse" href="javascript:void(0);"></a>
 		<div id="iframe-container" class="desktop">
