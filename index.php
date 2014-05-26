@@ -19,7 +19,14 @@
 */
 
 global $iso_lang, $translations;
-$iso_lang = (isset($_GET['iso_lang']) && in_array($_GET['iso_lang'], array('fr', 'en'))) ? $_GET['iso_lang'] : 'en';
+$iso_lang = (isset($_GET['iso_lang']) && in_array($_GET['iso_lang'], array('fr', 'en', 'es', 'it', 'de', 'nl', 'pl', 'ru', 'pt'))) ? $_GET['iso_lang'] : null;
+if ($iso_lang === null)
+{
+	header('HTTP/1.1 404 Not Found');
+	header('Status: 404 Not Found');
+	exit;
+}
+
 $translations = array(
 	'fr' => array(
 		'PrestaShop Demo' => 'Demo PrestaShop',
