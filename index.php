@@ -19,13 +19,21 @@
 */
 
 global $iso_lang, $translations;
-$iso_lang = (isset($_GET['iso_lang']) && in_array($_GET['iso_lang'], array('fr', 'en', 'es', 'it', 'de', 'nl', 'pl', 'ru', 'pt'))) ? $_GET['iso_lang'] : null;
-if ($iso_lang === null)
+
+$iso_lang = 'en';
+if (!isset($_GET['iso_lang']))
+{
+	header('HTTP/1.1 301 Moved Permanently');
+	header('Location: /en/');
+	exit;
+}
+elseif (!in_array($_GET['iso_lang'], array('fr', 'en', 'es', 'it', 'de', 'nl', 'pl', 'ru', 'pt')))
 {
 	header('HTTP/1.1 404 Not Found');
 	header('Status: 404 Not Found');
-	exit;
 }
+else
+	$iso_lang = $_GET['iso_lang'];
 
 $translations = array(
 	'fr' => array(
@@ -93,7 +101,7 @@ function translate($s)
 		<a class="btn btn-collapse" href="javascript:void(0);"></a>
 		<div id="iframe-container" class="desktop">
 			<div id="iframe-wrapper">
-				<div id="loadingMessage"><img src="img/loading.gif" alt="loading"></div>
+				<div id="loadingMessage"><img src="/img/loading.gif" alt="loading"></div>
 				<iframe id="framelive" name="framelive"></iframe>
 			</div>
 		</div>
