@@ -66,6 +66,7 @@ function translate($s)
 		<title><?php translate('Prestashop Demo') ?></title>
 		<meta name="description" content="<?php translate('Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop.') ?>" />
 		<link rel="stylesheet" href="/css/screen.css">
+		<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
 	</head>
 	<body>
 		<div id="header">
@@ -129,10 +130,12 @@ function translate($s)
 				var init = $('.btn-explore-front');
 
 				if (typeof params.view !== undefined){
-					console.log(params.view);
+					//console.log(params.view);
 					switch (params.view) {
 						case 'back':
 							init = $('.btn-explore-bo');
+							$('.btn-explore-front').removeClass('hide');
+							$('.btn-explore-bo').addClass('hide');
 							break;
 						default:
 							init = $('.btn-explore-front');
@@ -142,6 +145,7 @@ function translate($s)
 
 				$("#framelive").attr("src", init.attr('href'));
 				history.pushState({}, '', '?view=' + init.data("view"));
+
 				$('#framelive').load(function () {
 					$('#loadingMessage').css('display', 'none');
 				});
