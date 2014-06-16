@@ -44,7 +44,7 @@ $translations = array(
 		'Smartphone' => 'Mobile',
 		'Explore<br>Front Office' => 'Explorez<br>la boutique',
 		'Explore<br>Back Office' => 'Explorez le<br>Panneau d\'administration',
-		'Download<br>PrestaShop' => 'Téléchargez<br>PrestaShop',
+		'Discover<br>PrestaShop' => 'Découvrez<br>PrestaShop',
 		'' => '',
 	),
 );
@@ -170,6 +170,7 @@ function translate($s)
 
 				$('.btn-collapse').on('click', function(){
 					$('#header').toggle();
+					$('body').toggleClass('collapsed');
 					$(this).toggleClass('collapsed');
 				});
 
