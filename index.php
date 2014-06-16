@@ -95,7 +95,7 @@ function translate($s)
 					</a>
 				</li>
 			</ul>
-			<a class="btn btn-download" target="_blank" href="http://www.prestashop.com/en/download"><?php translate('Download<br>PrestaShop') ?></a>
+			<a class="btn btn-download" target="_blank" href="http://www.prestashop.com/"><?php translate('Download<br>PrestaShop') ?></a>
 			<a class="btn btn-explore btn-explore-bo" data-view="back" href="http://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo<?php if ($iso_lang != 'en') echo $iso_lang; ?>@prestashop.com&password=prestashop_demo"><?php translate('Explore<br>Back Office') ?></a>
 			<a class="btn btn-explore btn-explore-front hide" data-view="front" href="http://fo.demo.prestashop.com/<?php echo $iso_lang ?>/"><?php translate('Explore<br>Front Office') ?></a>
 		</div>
