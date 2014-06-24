@@ -21,7 +21,6 @@
 body, html{
 	height: 100%;
 	font-family: arial;
-	min-width: 530px;
 	background-color: white;
 	&.framed-tablet-v{
 		min-width: 1000px;
@@ -42,7 +41,6 @@ body, html{
 	top: 0;
 	left: 0;
 	width: 100%;
-	min-width: 530px;
 	background-color: black;
 	z-index: 10;
 	@include box-shadow(0 -2px 0 white inset);
