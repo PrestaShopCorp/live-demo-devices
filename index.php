@@ -61,7 +61,6 @@ function translate($s)
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="robots" CONTENT="noindex, nofollow">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<title><?php translate('PrestaShop Demo') ?></title>
 		<meta name="description" content="<?php translate('Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop.') ?>" />
