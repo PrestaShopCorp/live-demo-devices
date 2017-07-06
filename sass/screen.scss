@@ -32,8 +32,9 @@
 
 body, html{
 	height: 100%;
-	font-family: arial;
-	background-color: white;
+	font-size: 16px;
+	font-family: Montserrat, arial, sans-serif;
+	background-color: #ece9e9;
 	&.framed-tablet-v{
 		min-width: 1000px;
 	}
@@ -49,39 +50,40 @@ body, html{
 }
 #header{
 	position: relative;
-	height: 80px;
 	top: 0;
 	left: 0;
 	width: 100%;
-	background-color: black;
+	background-color: #251b5b;
 	z-index: 10;
-	@include box-shadow(0 -2px 0 white inset);
+	height: 100px;
 	a.btn {
-		color: white;
+		color: #ffffff;
 		text-transform: uppercase;
-		background-color: #282828;
-		padding: 10px 15px 10px 50px;
-		border: solid 1px #999999;
-		font-size: .75em;
+		background-color: transparent;
+		padding: 20px 40px;
+		border: solid 1px #ffffff;
+		font-size: 0.875rem;
 		font-weight: normal;
 		text-decoration: none;
 		float: right;
 		position: relative;
-		top: 16px;
-		margin-right: 18px;
-		@include border-radius(5px);
+		margin: 22px 18px 22px 0;
+		transition: background-color .3s linear;
 		&:hover{
-			background-color: #484848; 
+			background-color: #ffffff;
+			color: #251b5b;
 		}
 		@media (max-width: 600px){
 			display: none;
 		}
-	}
-	.btn-download{
-		background: url('/img/btn-download.png') 8px center no-repeat 
-	}
-	.btn-explore{
-		background: url('/img/btn-explore.png') 20px center no-repeat 
+		&.btn-download{
+			background-color: #df0067;
+			border-color: #df0067;
+			color: #ffffff;
+			&:hover{
+				background-color: #e53385;
+			}
+		}
 	}
 }
 .btn-collapse{
