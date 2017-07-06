@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="405px" height="755px" viewBox="0 0 405 755" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="15" y="33" width="375" height="667"></rect>
+    </defs>
+    <g id="Demo-Responsive" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(-530.000000, -160.000000)">
+            <g id="Group-2" transform="translate(530.000000, 160.000000)">
+                <g id="Rectangle-3">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <rect stroke="#D0C9C9" stroke-width="3" x="13.5" y="31.5" width="378" height="670"></rect>
+                </g>
+                <rect id="Rectangle-3" stroke="#D0C9C9" stroke-width="3" x="1.5" y="1.5" width="402" height="752" rx="30"></rect>
+                <circle id="Oval" fill="#D0C9C9" cx="203" cy="726" r="20"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
