@@ -64,6 +64,7 @@ function translate($s)
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<title><?php translate('PrestaShop Demo') ?></title>
 		<meta name="description" content="<?php translate('Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop.') ?>" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="/css/screen.css">
 		<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
 	</head>
