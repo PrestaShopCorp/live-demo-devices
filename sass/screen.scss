@@ -229,15 +229,15 @@ body.collapsed #iframe-container{
 }
 #iframe-container.tablet-v{
 	top: 10px;
-	height: 1345px;
+	height: 1135px;
 	width: 100%;
-	background: url(/img/view-tablet-v.png) top center no-repeat;
+	background: url(/img/view-tablet-v.svg) top center no-repeat;
 	#iframe-wrapper{
 		display: block;
 		width: 768px;
 		height: 1024px;
 		iframe{
-			top: 130px;
+			top: 31px;
 		}
 	}
 }
