@@ -214,15 +214,16 @@ body.collapsed #iframe-container{
 
 #iframe-container.tablet-h{
 	top: 20px;
-	height: 1090px;
+	height: 849px;
 	width: 100%;
-	background: url(/img/view-tablet-h.png) top center no-repeat;
+	background: url(/img/view-tablet-h.svg) top center no-repeat;
 	#iframe-wrapper{
 		display: block;
 		width: 1024px;
 		height: 768px;
 		iframe{
-			top: 105px;
+			top: 30px;
+			left: -20px;
 		}
 	}
 }
