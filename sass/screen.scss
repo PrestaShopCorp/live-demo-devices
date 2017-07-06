@@ -86,18 +86,39 @@ body, html{
 }
 .btn-collapse{
 	position: absolute;
-	background: url('/img/collapse.png') center -5px no-repeat white;
-	top: 78px;
-	left: 15px;
-	width: 50px;
-	height: 30px;
+	background-color: rgba(37, 27, 91, 0.4);
+	top: 100px;
+	left: 0;
+	width: 87px;
+	height: 32px;
 	z-index: 9999;
-	line-height: 30px;
-	@include border-radius(2px);
+	line-height: 32px;
+		text-decoration: none;
+	color: #ffffff;
+	font-size: 0.75rem;
+	text-align: center;
+	&::before{
+		content:"\E316";
+		font-family: 'Material Icons';
+		vertical-align: middle;
+		font-size: 1.25rem;
+		margin: 0 5px 0 -5px;
+	}
+	.show-header {
+		display: none;
+	}
 	&.collapsed{
-		height: 40px;
-		background: url('/img/collapse.png') center -40px no-repeat white;
-		top: -5px;
+		top: 0;
+		.show-header {
+			display: inline;
+		}
+		.hide-header {
+			display: none;
+		}
+		&::before{
+			content:"\E313";
+			font-family: 'Material Icons';
+		}
 	}
 }
 #logo{

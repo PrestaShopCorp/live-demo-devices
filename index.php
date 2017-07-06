@@ -99,7 +99,7 @@ function translate($s)
 			<a class="btn btn-explore btn-explore-bo" data-view="back" href="http://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo<?php if ($iso_lang != 'en') echo $iso_lang; ?>@prestashop.com&password=prestashop_demo"><?php translate('Explore<br>Back Office') ?></a>
 			<a class="btn btn-explore btn-explore-front hide" data-view="front" href="http://fo.demo.prestashop.com/<?php echo $iso_lang ?>/"><?php translate('Explore<br>Front Office') ?></a>
 		</div>
-		<a class="btn btn-collapse" href="javascript:void(0);"></a>
+		<a class="btn btn-collapse" href="javascript:void(0);"><span class="hide-header"><?php translate('Hide') ?></span><span class="show-header"><?php translate('Show') ?></span></a>
 		<div id="iframe-container" class="desktop">
 			<div id="iframe-wrapper">
 				<div id="loadingMessage"><img src="/img/loading.gif" alt="loading"></div>
