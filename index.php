@@ -66,7 +66,7 @@ function translate($s)
 		<meta name="description" content="<?php translate('Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop.') ?>" />
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="/css/screen.css">
-		<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+		<link rel="shortcut icon" href="/img/favicon.ico" type="image/vnd.microsoft.icon" />
 	</head>
 	<body>
 		<div id="header">
