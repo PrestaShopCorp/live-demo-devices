@@ -120,20 +120,27 @@ body, html{
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	margin-top: 27px;
+	i {
+		font-size: 40px;
+	}
 	li {
 		display: inline-block;
 		float: left;
 		margin-right: 10px;
 		a {
+			color: #ffffff;
 			@include single-transition(all,.5s,ease-in-out);
-			@include opacity(.6);
 			&.active, &:hover {
-				@include opacity(1);
+				color: #df0067;
 			}
 		}
 	}
-	@media (max-width: 900px){	
+	@media (max-width: 900px){
 		display: none;
+	}
+	.tablet-v i {
+		transform: rotate(90deg);
 	}
 }
 #devices a, #devices a img{

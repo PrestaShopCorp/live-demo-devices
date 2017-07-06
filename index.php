@@ -76,22 +76,22 @@ function translate($s)
 			<ul id="devices">
 				<li>
 					<a href="javascript:void(0);" class='change-device active' data-target='desktop' >
-						<img src='/img/desktop.png' alt='<?php translate('Desktop') ?>' />
+						<i class="material-icons">&#xE30C;</i>
 					</a>
 				</li>
 				<li>
 					<a href="javascript:void(0);" class='change-device' data-target='tablet-h'>
-						<img src='/img/tablet-h.png' alt='<?php translate('Tablet') ?>' />
+						<i class="material-icons">&#xE32F;</i>
 					</a>
 				</li>
 				<li>
-					<a href="javascript:void(0);" class='change-device' data-target='tablet-v'>
-						<img src='/img/tablet-v.png' alt='<?php translate('Tablet') ?>' />
+					<a href="javascript:void(0);" class='change-device tablet-v' data-target='tablet-v'>
+						<i class="material-icons">&#xE32F;</i>
 					</a>
 				</li>
 				<li>
 					<a href="javascript:void(0);" class='change-device' data-target='mobile'>
-						<img src='/img/mobile.png' alt='<?php translate('Smartphone') ?>' />
+						<i class="material-icons">&#xE325;</i>
 					</a>
 				</li>
 			</ul>
