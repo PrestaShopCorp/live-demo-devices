@@ -18,10 +18,23 @@
 */
 @import "compass";
 @import "compass/reset";
+
+@font-face {
+	font-family: 'Montserrat';
+	src:	url(/fonts/montserrat/montserrat-regular-webfont.eot);
+	src:	url(/fonts/montserrat/montserrat-regular-webfont.eot?#iefix) format('embedded-opentype'),
+				url(/fonts/montserrat/montserrat-regular-webfont.woff2) format('woff2'),
+				url(/fonts/montserrat/montserrat-regular-webfont.woff) format('woff'),
+				url(/fonts/montserrat/montserrat-regular-webfont.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+
 body, html{
 	height: 100%;
-	font-family: arial;
-	background-color: white;
+	font-size: 16px;
+	font-family: Montserrat, arial, sans-serif;
+	background-color: #ece9e9;
 	&.framed-tablet-v{
 		min-width: 1000px;
 	}
@@ -37,59 +50,81 @@ body, html{
 }
 #header{
 	position: relative;
-	height: 80px;
 	top: 0;
 	left: 0;
 	width: 100%;
-	background-color: black;
+	background-color: #251b5b;
 	z-index: 10;
-	@include box-shadow(0 -2px 0 white inset);
+	height: 100px;
 	a.btn {
-		color: white;
+		color: #ffffff;
 		text-transform: uppercase;
-		background-color: #282828;
-		padding: 10px 15px 10px 50px;
-		border: solid 1px #999999;
-		font-size: .75em;
+		background-color: transparent;
+		padding: 20px 40px;
+		border: solid 1px #ffffff;
+		font-size: 0.875rem;
 		font-weight: normal;
 		text-decoration: none;
 		float: right;
 		position: relative;
-		top: 16px;
-		margin-right: 18px;
-		@include border-radius(5px);
+		margin: 22px 18px 22px 0;
+		transition: background-color .3s linear;
 		&:hover{
-			background-color: #484848; 
+			background-color: #ffffff;
+			color: #251b5b;
 		}
 		@media (max-width: 600px){
 			display: none;
 		}
-	}
-	.btn-download{
-		background: url('/img/btn-download.png') 8px center no-repeat 
-	}
-	.btn-explore{
-		background: url('/img/btn-explore.png') 20px center no-repeat 
+		&.btn-download{
+			background-color: #df0067;
+			border-color: #df0067;
+			color: #ffffff;
+			&:hover{
+				background-color: #e53385;
+			}
+		}
 	}
 }
 .btn-collapse{
 	position: absolute;
-	background: url('/img/collapse.png') center -5px no-repeat white;
-	top: 78px;
-	left: 15px;
-	width: 50px;
-	height: 30px;
+	background-color: rgba(37, 27, 91, 0.4);
+	top: 100px;
+	left: 0;
+	width: 87px;
+	height: 32px;
 	z-index: 9999;
-	line-height: 30px;
-	@include border-radius(2px);
+	line-height: 32px;
+		text-decoration: none;
+	color: #ffffff;
+	font-size: 0.75rem;
+	text-align: center;
+	&::before{
+		content:"\E316";
+		font-family: 'Material Icons';
+		vertical-align: middle;
+		font-size: 1.25rem;
+		margin: 0 5px 0 -5px;
+	}
+	.show-header {
+		display: none;
+	}
 	&.collapsed{
-		height: 40px;
-		background: url('/img/collapse.png') center -40px no-repeat white;
-		top: -5px;
+		top: 0;
+		.show-header {
+			display: inline;
+		}
+		.hide-header {
+			display: none;
+		}
+		&::before{
+			content:"\E313";
+			font-family: 'Material Icons';
+		}
 	}
 }
 #logo{
-	width: 212px;
+	width: 243px;
 	@media (max-width: 600px){
 		margin: 0 auto;
 	}
@@ -97,31 +132,38 @@ body, html{
 #logo img{
 	position: relative;
 	max-width: 100%;
-	top: 10px;
+	top: 27px;
 	left: 15px;
 	float: left;
-	height: 55px;
-	margin-right: 30px;
+	height: 46px;
+	margin-right: 80px;
 }
 #devices{
 	float: left;
 	padding: 0;
 	margin: 0;
 	list-style: none;
+	margin-top: 27px;
+	i {
+		font-size: 40px;
+	}
 	li {
 		display: inline-block;
 		float: left;
 		margin-right: 10px;
 		a {
+			color: #ffffff;
 			@include single-transition(all,.5s,ease-in-out);
-			@include opacity(.6);
 			&.active, &:hover {
-				@include opacity(1);
+				color: #df0067;
 			}
 		}
 	}
-	@media (max-width: 900px){	
+	@media (max-width: 900px){
 		display: none;
+	}
+	.tablet-v i {
+		transform: rotate(90deg);
 	}
 }
 #devices a, #devices a img{
@@ -174,29 +216,30 @@ body.collapsed #iframe-container{
 
 #iframe-container.tablet-h{
 	top: 20px;
-	height: 1090px;
+	height: 849px;
 	width: 100%;
-	background: url(/img/view-tablet-h.png) top center no-repeat;
+	background: url(/img/view-tablet-h.svg) top center no-repeat;
 	#iframe-wrapper{
 		display: block;
 		width: 1024px;
 		height: 768px;
 		iframe{
-			top: 105px;
+			top: 30px;
+			left: -20px;
 		}
 	}
 }
 #iframe-container.tablet-v{
 	top: 10px;
-	height: 1345px;
+	height: 1135px;
 	width: 100%;
-	background: url(/img/view-tablet-v.png) top center no-repeat;
+	background: url(/img/view-tablet-v.svg) top center no-repeat;
 	#iframe-wrapper{
 		display: block;
 		width: 768px;
 		height: 1024px;
 		iframe{
-			top: 130px;
+			top: 31px;
 		}
 	}
 }

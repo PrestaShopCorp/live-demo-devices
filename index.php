@@ -64,8 +64,9 @@ function translate($s)
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<title><?php translate('PrestaShop Demo') ?></title>
 		<meta name="description" content="<?php translate('Looking for a powerful shopping cart software? Try the PrestaShop Demo now and visualize it on mobile, tablet and desktop.') ?>" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		<link rel="stylesheet" href="/css/screen.css">
-		<link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+		<link rel="shortcut icon" href="/img/favicon.ico" type="image/vnd.microsoft.icon" />
 	</head>
 	<body>
 		<div id="header">
@@ -75,30 +76,30 @@ function translate($s)
 			<ul id="devices">
 				<li>
 					<a href="javascript:void(0);" class='change-device active' data-target='desktop' >
-						<img src='/img/desktop.png' alt='<?php translate('Desktop') ?>' />
+						<i class="material-icons">&#xE30C;</i>
 					</a>
 				</li>
 				<li>
 					<a href="javascript:void(0);" class='change-device' data-target='tablet-h'>
-						<img src='/img/tablet-h.png' alt='<?php translate('Tablet') ?>' />
+						<i class="material-icons">&#xE32F;</i>
 					</a>
 				</li>
 				<li>
-					<a href="javascript:void(0);" class='change-device' data-target='tablet-v'>
-						<img src='/img/tablet-v.png' alt='<?php translate('Tablet') ?>' />
+					<a href="javascript:void(0);" class='change-device tablet-v' data-target='tablet-v'>
+						<i class="material-icons">&#xE32F;</i>
 					</a>
 				</li>
 				<li>
 					<a href="javascript:void(0);" class='change-device' data-target='mobile'>
-						<img src='/img/mobile.png' alt='<?php translate('Smartphone') ?>' />
+						<i class="material-icons">&#xE325;</i>
 					</a>
 				</li>
 			</ul>
-			<a class="btn btn-download" target="_blank" href="http://www.prestashop.com/"><?php translate('Discover<br>PrestaShop') ?></a>
-			<a class="btn btn-explore btn-explore-bo" data-view="back" href="http://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo<?php if ($iso_lang != 'en') echo $iso_lang; ?>@prestashop.com&password=prestashop_demo"><?php translate('Explore<br>Back Office') ?></a>
-			<a class="btn btn-explore btn-explore-front hide" data-view="front" href="http://fo.demo.prestashop.com/<?php echo $iso_lang ?>/"><?php translate('Explore<br>Front Office') ?></a>
+			<a class="btn btn-download" target="_blank" href="http://www.prestashop.com/"><?php translate('Start now') ?></a>
+			<a class="btn btn-explore btn-explore-bo" data-view="back" href="http://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo<?php if ($iso_lang != 'en') echo $iso_lang; ?>@prestashop.com&password=prestashop_demo"><?php translate('Explore Back Office') ?></a>
+			<a class="btn btn-explore btn-explore-front hide" data-view="front" href="http://fo.demo.prestashop.com/<?php echo $iso_lang ?>/"><?php translate('Explore Front Office') ?></a>
 		</div>
-		<a class="btn btn-collapse" href="javascript:void(0);"></a>
+		<a class="btn btn-collapse" href="javascript:void(0);"><span class="hide-header"><?php translate('Hide') ?></span><span class="show-header"><?php translate('Show') ?></span></a>
 		<div id="iframe-container" class="desktop">
 			<div id="iframe-wrapper">
 				<div id="loadingMessage"><img src="/img/loading.gif" alt="loading"></div>
