@@ -18,6 +18,18 @@
 */
 @import "compass";
 @import "compass/reset";
+
+@font-face {
+	font-family: 'Montserrat';
+	src:	url(/fonts/montserrat/montserrat-regular-webfont.eot);
+	src:	url(/fonts/montserrat/montserrat-regular-webfont.eot?#iefix) format('embedded-opentype'),
+				url(/fonts/montserrat/montserrat-regular-webfont.woff2) format('woff2'),
+				url(/fonts/montserrat/montserrat-regular-webfont.woff) format('woff'),
+				url(/fonts/montserrat/montserrat-regular-webfont.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	}
+
 body, html{
 	height: 100%;
 	font-family: arial;
