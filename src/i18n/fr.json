@@ -1,0 +1,12 @@
+{
+    "title": "Demo PrestaShop",
+    "description": "Vous cherchez un logiciel e-commerce simple et puissant ? Essayez PrestaShop dès maintenant aux formats web, mobile et tablette.",
+    "Desktop": "Web",
+    "Tablet": "Tablette",
+    "Smartphone": "Mobile",
+    "explore-front": "Explorer la boutique",
+    "explore-back": "Explorer le Panneau d'administration",
+    "start": "Démarrer maintenant",
+    "hide": "Masquer",
+    "show": "Afficher"
+}
