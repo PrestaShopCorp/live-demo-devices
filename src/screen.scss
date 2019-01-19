@@ -103,6 +103,7 @@ body, html{
 	color: #ffffff;
 	font-size: 0.75rem;
 	text-align: center;
+	cursor: pointer;
 	&::before{
 		content:"\E316";
 		font-family: 'Material Icons';
@@ -167,9 +168,10 @@ body, html{
 		transform: rotate(90deg);
 	}
 }
-#devices a, #devices a img{
+#devices a, #devices a img {
 	text-decoration: none;
 	border: none;
+	cursor: pointer;
 }
 #loadingMessage{
 	position: fixed;
