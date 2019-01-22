@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Header from './components/Header';
-import HeaderSwitch from './components/HeaderSwitch';
+import Header from './components/Header.vue';
+import HeaderSwitch from './components/HeaderSwitch.vue';
 
 export default {
   name: 'App',

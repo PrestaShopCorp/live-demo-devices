@@ -27,7 +27,7 @@
 
 <script>
 import { mapState } from 'vuex';
-import DeviceButton from './DeviceButton';
+import DeviceButton from './DeviceButton.vue';
 
 export default {
   name: 'Header',
