@@ -19,6 +19,10 @@ export default {
   props: ['view'],
   computed: {
     iframeUrl() {
+      // If the shop url is not defined, do not happend the locale to it.
+      if (!this.$store.state.links[this.view]) {
+        return null;
+      }
       return this.$store.state.links[this.view] + this.$i18n.locale;
     },
     ...mapState(['device', 'ready', 'displayHeader']),
@@ -30,6 +34,9 @@ export default {
     setIframeReady() {
       this.$store.commit('setIframeReady');
     },
+  },
+  created() {
+    this.$store.dispatch('requestMachine');
   },
 };
 </script>

@@ -21,6 +21,9 @@ export default {
       device: 'desktop',
     };
   },
+  created() {
+    this.$store.dispatch('requestMachine');
+  },
 };
 </script>
 
