@@ -62,7 +62,9 @@ export default {
 
         setTimeout(() => {
           commit('setShopUrl', { domain: container.name });
-        }, 10000);
+        },
+        // If we reuse an existing container, display it immediately
+        container.newContainer ? 10000 : 0);
       }).catch(() => {
         commit('fallbackToOldDemo');
         console.error('The service is unavailable, please try later');
