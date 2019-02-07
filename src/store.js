@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import io from 'socket.io-client';
+import i18n from './i18n';
 
 const baseEndpoint = process.env.MS_DOMAIN || 'integration-shuffle.prestashop.net';
 
@@ -27,7 +28,7 @@ export default {
     },
     toggleHeaderVisibility: (state) => {
       state.displayHeader = !state.displayHeader;
-    },  
+    },
     setIframeLoading: (state) => {
       state.ready = false;
     },
@@ -36,14 +37,14 @@ export default {
     },
     setShopUrl: (state, payload) => {
       state.links = {
-        front: `http:/${payload.domain}.${baseEndpoint}/`,
-        back: `http:/${payload.domain}.${baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo@prestashop.com&password=prestashop_demo`,
+        front: `http:/${payload.domain}.${baseEndpoint}/${i18n.locale}`,
+        back: `http:/${payload.domain}.${baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo&redirect=AdminModules`,
       };
     },
     fallbackToOldDemo: (state) => {
       state.links = {
-        front: 'http://fo.demo.prestashop.com/',
-        back: 'http://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo@prestashop.com&password=prestashop_demo',
+        front: `http://fo.demo.prestashop.com/${i18n.locale}`,
+        back: `http://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo`,
       };
     },
   },
