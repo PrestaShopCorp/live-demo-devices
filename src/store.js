@@ -2,7 +2,7 @@ import Vue from 'vue';
 import io from 'socket.io-client';
 import i18n from './i18n';
 
-const baseEndpoint = process.env.MS_DOMAIN || 'integration-shuffle.prestashop.net';
+const defaultBaseEndpoint = 'machine-shuffle.prestashop.net';
 
 export default {
   state: {
@@ -14,8 +14,9 @@ export default {
       back: '',
     },
     factory: {
-      apiEndpoint: `https://api.${baseEndpoint}/api/v1/`,
-      socketEndpoint: `https://socket.${baseEndpoint}/`,
+      baseEndpoint: null,
+      apiEndpoint: null,
+      socketEndpoint: null,
       params: {
         version: '1.7',
         api_key: 'anonymous',
@@ -37,8 +38,8 @@ export default {
     },
     setShopUrl: (state, payload) => {
       state.links = {
-        front: `http:/${payload.domain}.${baseEndpoint}/${i18n.locale}`,
-        back: `http:/${payload.domain}.${baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo&redirect=AdminModules`,
+        front: `http:/${payload.domain}.${state.factory.baseEndpoint}/${i18n.locale}`,
+        back: `http:/${payload.domain}.${state.factory.baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo&redirect=AdminModules`,
       };
     },
     fallbackToOldDemo: (state) => {
@@ -46,6 +47,16 @@ export default {
         front: `http://fo.demo.prestashop.com/${i18n.locale}`,
         back: `http://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo`,
       };
+    },
+    setBaseEndpoint: (state, domain) => {
+      console.log(domain);
+      if (domain.includes('demo.')) {
+        state.factory.baseEndpoint = domain.replace('demo.', '');
+      } else {
+        state.factory.baseEndpoint = defaultBaseEndpoint;
+      }
+      state.factory.apiEndpoint = `https://api.${state.factory.baseEndpoint}/api/v1/`;
+      state.factory.socketEndpoint = `https://socket.${state.factory.baseEndpoint}/`;
     },
   },
   actions: {
