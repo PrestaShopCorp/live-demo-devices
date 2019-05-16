@@ -49,7 +49,6 @@ export default {
       };
     },
     setBaseEndpoint: (state, domain) => {
-      console.log(domain);
       if (domain.includes('demo.')) {
         state.factory.baseEndpoint = domain.replace('demo.', '');
       } else {

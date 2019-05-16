@@ -12,7 +12,14 @@ localVue.use(VueRouter);
 describe('Shop.vue', () => {
   it('renders the ready spinner by default', () => {
     const wrapper = shallowMount(Shop, {
-      store: new Vuex.Store(store),
+      store: new Vuex.Store(Object.assign({}, store, {
+        actions: {
+          requestMachine: () => {},
+        },
+        mutations: {
+          setBaseEndpoint: () => {},
+        },
+      })),
       localVue,
       i18n,
     });
@@ -29,6 +36,13 @@ describe('Shop.vue', () => {
             front: '',
             back: '',
           },
+          factory: {},
+        },
+        actions: {
+          requestMachine: () => {},
+        },
+        mutations: {
+          setBaseEndpoint: () => {},
         },
       }),
       localVue,
