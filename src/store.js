@@ -70,14 +70,24 @@ export default {
           socket.emit('sendId', container.id);
         });
 
-        setTimeout(() => {
-          commit('setShopUrl', { domain: container.name });
-        },
-        // If we reuse an existing container, display it immediately
-        container.newContainer ? 10000 : 0);
-      }).catch(() => {
+        // If the shop could not start in a given time, fallback
+        const timeout = setTimeout(() => { commit('fallbackToOldDemo'); }, 20000);
+        // Make sure a webserver is started before updating the iframe,
+        // to avoid error messages at startup
+        const recurrentCheck = setInterval(() => {
+          Vue.http.head(`http:/${container.name}.${state.factory.baseEndpoint}`).then((headResponse) => {
+            if (headResponse.status !== 502) {
+              // Webserver answered, cancel all checks and display the shop
+              clearTimeout(timeout);
+              commit('setShopUrl', { domain: container.name });
+              clearInterval(recurrentCheck);
+            }
+          }).catch(() => {});
+        }, 2000);
+      }).catch((error) => {
         commit('fallbackToOldDemo');
-        console.error('The service is unavailable, please try later');
+        // eslint-disable-next-line no-console
+        console.error('The service is unavailable, please try later', error);
       });
     },
   },
