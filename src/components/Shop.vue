@@ -28,7 +28,9 @@ export default {
       this.$store.commit('toggleHeaderVisibility');
     },
     setIframeReady() {
-      this.$store.commit('setIframeReady');
+      if (this.iframeUrl) {
+        this.$store.commit('setIframeReady');
+      }
     },
   },
   created() {
