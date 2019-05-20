@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a class='change-device'
+    <a class="change-device"
       :class="[
         deviceTrigger,
         device == deviceTrigger ? 'active': ''

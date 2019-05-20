@@ -3,8 +3,8 @@
       v-on:click="toggleHeader()"
       :class="[!displayHeader ? 'collapsed': '']"
   >
-    <span class="hide-header" v-show="displayHeader">{{ $t("hide") }}</span>
-    <span class="show-header" v-show="!displayHeader">{{ $t("show") }}</span>
+    <span class="hide-header" v-if="displayHeader">{{ $t("hide") }}</span>
+    <span class="show-header" v-else>{{ $t("show") }}</span>
   </a>
 </template>
 
