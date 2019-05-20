@@ -23,7 +23,7 @@ describe('HeaderSwitch.vue', () => {
 
     expect(wrapper.find('.btn-collapse').classes('collapsed')).toBe(false);
     expect(wrapper.find('.hide-header').isVisible()).toBe(true);
-    expect(wrapper.find('.show-header').isVisible()).toBe(false);
+    expect(wrapper.find('.show-header').exists()).toBe(false);
   });
 
   it('hides when states matches', () => {
@@ -38,7 +38,7 @@ describe('HeaderSwitch.vue', () => {
     });
 
     expect(wrapper.find('.btn-collapse').classes('collapsed')).toBe(true);
-    expect(wrapper.find('.hide-header').isVisible()).toBe(false);
+    expect(wrapper.find('.hide-header').exists()).toBe(false);
     expect(wrapper.find('.show-header').isVisible()).toBe(true);
   });
 });
