@@ -16,11 +16,6 @@ export default {
     Header,
     HeaderSwitch,
   },
-  data() {
-    return {
-      device: 'desktop',
-    };
-  },
 };
 </script>
 
