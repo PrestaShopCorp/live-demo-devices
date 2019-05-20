@@ -38,7 +38,7 @@ export default {
     },
     setShopUrl: (state, payload) => {
       state.links = {
-        front: `http:/${payload.domain}.${state.factory.baseEndpoint}/${i18n.locale}`,
+        front: `http:/${payload.domain}.${state.factory.baseEndpoint}/${i18n.locale}/`,
         back: `http:/${payload.domain}.${state.factory.baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo&redirect=AdminModules`,
       };
     },
@@ -75,7 +75,7 @@ export default {
         // Make sure a webserver is started before updating the iframe,
         // to avoid error messages at startup
         const recurrentCheck = setInterval(() => {
-          Vue.http.head(`http:/${container.name}.${state.factory.baseEndpoint}`).then((headResponse) => {
+          Vue.http.head(`http:/${container.name}.${state.factory.baseEndpoint}/error500.html`).then((headResponse) => {
             if (headResponse.status !== 502) {
               // Webserver answered, cancel all checks and display the shop
               clearTimeout(timeout);
