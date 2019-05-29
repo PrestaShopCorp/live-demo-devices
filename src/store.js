@@ -18,7 +18,7 @@ export default {
       apiEndpoint: null,
       socketEndpoint: null,
       params: {
-        version: '1.7',
+        version: 'beta',
         api_key: 'anonymous',
       },
     },
