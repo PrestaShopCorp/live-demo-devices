@@ -173,17 +173,26 @@ body, html{
 	border: none;
 	cursor: pointer;
 }
-#loadingMessage{
-	position: fixed;
-	top: 150px;
-	display: block;
-	padding: 4px;
-	background-color: white;
-	left: calc(50% - 40px/2);
-	z-index: 9999;
-	text-align: center;
-	border-radius: 5px;
-	box-shadow: 0 0 15px black;
+.loadingMessageWrapper {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	width:100%;
+	margin-top: 10px;
+
+	#loadingMessage{
+		float: left;
+		padding: 4px;
+		background-color: white;
+		z-index: 9999;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow: 0 0 15px black;
+
+		p {
+			margin: 10px;
+		}
+	}
 }
 #iframe-container{
 	position: relative;
