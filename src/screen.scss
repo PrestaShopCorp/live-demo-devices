@@ -61,11 +61,12 @@ body, html{
 		color: #ffffff;
 		text-transform: uppercase;
 		background-color: transparent;
-		padding: 20px 40px;
+		padding: 20px 30px;
 		border: solid 1px #ffffff;
 		font-size: 0.875rem;
 		font-weight: normal;
 		text-decoration: none;
+		text-align: center;
 		float: right;
 		position: relative;
 		margin: 22px 18px 22px 0;
@@ -76,6 +77,11 @@ body, html{
 		&:hover{
 			background-color: #ffffff;
 			color: #251b5b;
+		}
+		// Tablet
+		@media (max-width: 1040px) {
+			max-width: 110px;
+			padding: 10px 20px;
 		}
 		@media (max-width: 600px){
 			display: none;
@@ -125,20 +131,20 @@ body, html{
 		}
 	}
 }
-#logo{
+
+#logo {
 	width: 243px;
 	@media (max-width: 600px){
 		margin: 0 auto;
 	}
-}
-#logo img{
-	position: relative;
-	max-width: 100%;
-	top: 27px;
-	left: 15px;
-	float: left;
-	height: 46px;
-	margin-right: 80px;
+	img {
+		position: relative;
+		max-width: 100%;
+		top: 27px;
+		left: 15px;
+		float: left;
+		height: 46px;
+	}
 }
 #devices{
 	float: left;
@@ -146,6 +152,7 @@ body, html{
 	margin: 0;
 	list-style: none;
 	margin-top: 27px;
+	margin-left: 80px;
 	i {
 		font-size: 40px;
 	}
@@ -161,7 +168,7 @@ body, html{
 			}
 		}
 	}
-	@media (max-width: 900px){
+	@media (max-width: 991.98px) {
 		display: none;
 	}
 	.tablet-v i {
