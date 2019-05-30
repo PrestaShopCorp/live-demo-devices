@@ -51,4 +51,47 @@ describe('Shop.vue', () => {
 
     expect(wrapper.find('#loadingMessage').isVisible()).toBe(false);
   });
+
+  it('displays the message at page load', () => {
+    const wrapper = shallowMount(Shop, {
+      store: new Vuex.Store(Object.assign({}, store, {
+        actions: {
+          requestMachine: () => {},
+        },
+        mutations: {
+          setBaseEndpoint: () => {},
+        },
+      })),
+      localVue,
+      i18n,
+    });
+
+    expect(wrapper.find('#loadingMessage p').isVisible()).toBe(true);
+  });
+
+  it('only displays the spinner (not the message) when switching interfaces', () => {
+    const wrapper = shallowMount(Shop, {
+      store: new Vuex.Store({
+        state: {
+          ready: false,
+          links: {
+            front: 'http://yo.doge',
+            back: 'http://yo.doge',
+          },
+          factory: {},
+        },
+        actions: {
+          requestMachine: () => {},
+        },
+        mutations: {
+          setBaseEndpoint: () => {},
+        },
+      }),
+      localVue,
+      i18n,
+    });
+
+    expect(wrapper.find('#loadingMessage').isVisible()).toBe(true);
+    expect(wrapper.find('#loadingMessage p').isVisible()).toBe(false);
+  });
 });
