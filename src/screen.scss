@@ -62,6 +62,7 @@ body, html{
 		text-transform: uppercase;
 		background-color: transparent;
 		padding: 20px 30px;
+		max-width: 200px;
 		border: solid 1px #ffffff;
 		font-size: 0.875rem;
 		font-weight: normal;
@@ -71,6 +72,11 @@ body, html{
 		position: relative;
 		margin: 22px 18px 22px 0;
 		transition: background-color .3s linear;
+
+		img {
+			display: none;
+		}
+
 		&.router-link-active {
 			display: none;
 		}
@@ -79,19 +85,31 @@ body, html{
 			color: #251b5b;
 		}
 		// Tablet
-		@media (max-width: 1040px) {
-			max-width: 110px;
-			padding: 10px 20px;
+		@media (max-width: 1064px) {
+			max-width: 135px;
+			padding: 10px;
 		}
-		@media (max-width: 600px){
-			display: none;
-		}
-		&.btn-download{
+		&.btn-download {
 			background-color: #df0067;
 			border-color: #df0067;
 			color: #ffffff;
 			&:hover{
 				background-color: #e53385;
+			}
+			@media (max-width: 600px){
+				display: none;
+			}
+		}
+		&.btn-visible-small {
+			@media (max-width: 600px) {
+				span {
+					display: none;
+				}
+				border: none;
+				margin: 10px;
+				img {
+					display: block;
+				}
 			}
 		}
 	}
@@ -134,9 +152,6 @@ body, html{
 
 #logo {
 	width: 243px;
-	@media (max-width: 600px){
-		margin: 0 auto;
-	}
 	img {
 		position: relative;
 		max-width: 100%;

@@ -12,15 +12,17 @@
     <a class="btn btn-download" target="_blank" href="http://www.prestashop.com/">
       {{ $t("start") }}
     </a>
-    <router-link to="back" class="btn btn-explore btn-explore-bo"
+    <router-link to="back" class="btn btn-explore btn-visible-small btn-explore-bo"
       @click.native="updateIframeLink"
     >
-      {{ $t("explore-back") }}
+      <span>{{ $t("explore-back") }}</span>
+      <img :alt="$t('explore-back')" src="../../public/switch-BO-FO.png" />
     </router-link>
-    <router-link to="front" class="btn btn-explore btn-explore-front"
+    <router-link to="front" class="btn btn-explore btn-visible-small btn-explore-front"
       @click.native="updateIframeLink"
     >
-      {{ $t("explore-front") }}
+      <span>{{ $t("explore-front") }}</span>
+      <img :alt="$t('explore-front')" src="../../public/switch-BO-FO.png" />
     </router-link>
   </div>
 </template>
