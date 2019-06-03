@@ -39,7 +39,7 @@ export default {
     setShopUrl: (state, payload) => {
       state.links = {
         front: `http:/${payload.domain}.${state.factory.baseEndpoint}/${i18n.locale}/`,
-        back: `http:/${payload.domain}.${state.factory.baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo&redirect=AdminModules`,
+        back: `http:/${payload.domain}.${state.factory.baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo`,
       };
     },
     fallbackToOldDemo: (state) => {
