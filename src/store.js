@@ -49,7 +49,7 @@ export default {
       };
     },
     setBaseEndpoint: (state, domain) => {
-      if (domain.includes('demo.')) {
+      if (domain !== 'demo.prestashop.com' && domain.includes('demo.')) {
         state.factory.baseEndpoint = domain.replace('demo.', '');
       } else {
         state.factory.baseEndpoint = defaultBaseEndpoint;
