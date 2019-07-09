@@ -40,7 +40,6 @@ export default {
     },
   },
   created() {
-    this.$store.commit('setBaseEndpoint', window.location.host);
     this.$store.dispatch('requestMachine');
   },
 };
