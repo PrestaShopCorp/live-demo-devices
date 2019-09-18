@@ -40,7 +40,13 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('requestMachine');
+    // eslint-disable-next-line no-console
+    console.log('Vue Shop idmodule :', this.$route.query.idmodule, 'name :', this.$route.query.module_name_toinstall);
+    const payload = {
+      idmodule: this.$route.query.idmodule,
+      moduleNameToinstall: this.$route.query.module_name_toinstall,
+    };
+    this.$store.dispatch('requestMachine', payload);
   },
 };
 </script>

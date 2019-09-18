@@ -24,9 +24,16 @@ export default new Router({
       if (i18n.locale !== lang) {
         i18n.locale = lang;
       }
+      // eslint-disable-next-line no-console
+      console.log('Router idmodule: ', to.query.idmodule);
+      console.log('Router to.query: ', to.query);
+      if (!Object.prototype.hasOwnProperty.call(to.query, 'module_name_toinstall')) {
+        const newQuery = Object.assign({}, to.query, { module_name_toinstall: 'ALL' });
+        return next({ path: defaultUri, query: newQuery });
+      }
       // If BO or FO view is not valid, reset
       if (!['back', 'front'].includes(view)) {
-        return next(defaultUri);
+        return next({ path: defaultUri, query: to.query });
       }
       return next();
     },

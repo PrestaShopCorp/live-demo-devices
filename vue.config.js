@@ -3,6 +3,7 @@ module.exports = {
   configureWebpack: {
     devServer: {
       clientLogLevel: 'warn',
+      disableHostCheck: true
     },
   },
   chainWebpack: (config) => {

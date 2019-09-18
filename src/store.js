@@ -49,7 +49,9 @@ export default {
     },
   },
   actions: {
-    requestMachine: ({ commit, state }) => {
+    requestMachine: ({ commit, state }, payload) => {
+      state.factory.params.id_module = payload.idmodule;
+      state.factory.params.module_name_toinstall = payload.moduleNameToinstall;
       Vue.http.post(
         `${state.factory.apiEndpoint}machine`,
         state.factory.params,
@@ -59,6 +61,8 @@ export default {
         socket.on('connect', () => {
           socket.emit('sendId', container.id);
         });
+        // eslint-disable-next-line no-console
+        console.log('Using API: ', baseEndpoint, ' idmodule: ', payload.idmodule, ' name: ', payload.moduleNameToinstall);
 
         // If the shop could not start in a given time, fallback
         const timeout = setTimeout(() => { commit('fallbackToOldDemo'); }, 20000);
