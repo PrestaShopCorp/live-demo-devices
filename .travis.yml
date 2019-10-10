@@ -3,8 +3,6 @@ node_js:
   - "lts/*"
 services:
   - xvfb
-addons:
-  chrome: stable
 cache:
   directories:
   - node_modules
