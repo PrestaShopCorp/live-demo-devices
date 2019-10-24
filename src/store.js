@@ -37,14 +37,14 @@ export default {
     },
     setShopUrl: (state, payload) => {
       state.links = {
-        front: `http:/${payload.domain}.${baseEndpoint}/${i18n.locale}/`,
-        back: `http:/${payload.domain}.${baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo`,
+        front: `https:/${payload.domain}.${baseEndpoint}/${i18n.locale}/`,
+        back: `https:/${payload.domain}.${baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo`,
       };
     },
     fallbackToOldDemo: (state) => {
       state.links = {
-        front: `http://fo.demo.prestashop.com/${i18n.locale}`,
-        back: `http://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo`,
+        front: `https://fo.demo.prestashop.com/${i18n.locale}`,
+        back: `https://bo.demo.prestashop.com/demo/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo`,
       };
     },
   },
