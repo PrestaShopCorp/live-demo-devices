@@ -69,7 +69,7 @@ export default {
         // Make sure a webserver is started before updating the iframe,
         // to avoid error messages at startup
         const recurrentCheck = setInterval(() => {
-          Vue.http.head(`http:/${container.name}.${baseEndpoint}/error500.html`).then((headResponse) => {
+          Vue.http.head(`https:/${container.name}.${baseEndpoint}/error500.html`).then((headResponse) => {
             if (headResponse.status !== 502) {
               // Webserver answered, cancel all checks and display the shop
               clearTimeout(timeout);
