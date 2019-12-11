@@ -40,17 +40,10 @@ export default {
     },
   },
   created() {
-    const payload = {};
-    if (this.$route !== undefined && this.$route.query !== undefined) {
-      payload.idmodule = this.$route.query.idmodule;
-      payload.moduleNameToinstall = this.$route.query.module_name_toinstall;
-
-      // Clean URL once the param are taken in account
-      const query = Object.assign({}, this.$route.query);
-      delete query.idmodule;
-      delete query.module_name_toinstall;
-      this.$router.replace({ query });
-    }
+    const payload = {
+      idmodule: this.$route.query.idmodule,
+      moduleNameToinstall: this.$route.query.module_name_toinstall,
+    };
     this.$store.dispatch('requestMachine', payload);
   },
 };
