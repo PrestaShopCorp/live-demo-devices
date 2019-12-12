@@ -40,10 +40,11 @@ export default {
     },
   },
   created() {
-    const payload = {
-      idmodule: this.$route.query.idmodule,
-      moduleNameToinstall: this.$route.query.module_name_toinstall,
-    };
+    const payload = {};
+    if (this.$route !== undefined && this.$route.query !== undefined) {
+      payload.idmodule = this.$route.query.idmodule;
+      payload.moduleNameToinstall = this.$route.query.module_name_toinstall;
+    }
     this.$store.dispatch('requestMachine', payload);
   },
 };
