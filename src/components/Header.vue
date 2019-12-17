@@ -9,7 +9,7 @@
       <DeviceButton deviceTrigger="tablet-v" icon="&#xE32F;"/>
       <DeviceButton deviceTrigger="mobile" icon="&#xE325;"/>
     </ul>
-    <a class="btn btn-download" target="_blank" href="http://www.prestashop.com/">
+    <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" href="http://www.prestashop.com/">
       {{ $t("start") }}
     </a>
     <router-link to="back" class="btn btn-explore btn-visible-small btn-explore-bo"
@@ -35,6 +35,10 @@ export default {
   name: 'Header',
   computed: {
     ...mapState(['device', 'displayHeader']),
+    demoShopIsBlankPrestashop() {
+      return undefined === this.$store.state.factory.params.id_module
+        || undefined === this.$store.state.factory.params.module_name_toinstall;
+    }
   },
   components: {
     DeviceButton,
