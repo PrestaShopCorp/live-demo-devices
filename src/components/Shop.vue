@@ -1,5 +1,5 @@
 <template>
-  <div id="iframe-container" :class="[device, !displayHeader ? 'full-screen' : '']">
+  <div id="iframe-container" :class="[device, (!displayHeader || !displayUI) ? 'full-screen' : '']">
     <div id="iframe-wrapper">
       <div class="loadingMessageWrapper">
         <div id="loadingMessage" v-show="!ready">
@@ -27,7 +27,7 @@ export default {
     noShopAssigned() {
       return !this.$store.state.links.front.length;
     },
-    ...mapState(['device', 'ready', 'displayHeader']),
+    ...mapState(['device', 'ready', 'displayHeader', 'displayUI']),
   },
   methods: {
     toggleHeader() {
@@ -44,6 +44,10 @@ export default {
     if (this.$route !== undefined && this.$route.query !== undefined) {
       payload.idmodule = this.$route.query.idmodule;
       payload.moduleNameToinstall = this.$route.query.module_name_toinstall;
+
+      if (this.$route.query.no_ui !== undefined) {
+        this.$store.commit('hideUi');
+      }
     }
     this.$store.dispatch('requestMachine', payload);
   },

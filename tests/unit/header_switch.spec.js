@@ -15,6 +15,7 @@ describe('HeaderSwitch.vue', () => {
       store: new Vuex.Store({
         state: {
           displayHeader: true,
+          displayUI: true,
         },
       }),
       localVue,
@@ -31,6 +32,7 @@ describe('HeaderSwitch.vue', () => {
       store: new Vuex.Store({
         state: {
           displayHeader: false,
+          displayUI: true,
         },
       }),
       localVue,
@@ -40,5 +42,21 @@ describe('HeaderSwitch.vue', () => {
     expect(wrapper.find('.btn-collapse').classes('collapsed')).toBe(true);
     expect(wrapper.find('.hide-header').exists()).toBe(false);
     expect(wrapper.find('.show-header').isVisible()).toBe(true);
+  });
+  it('hides itself with no-ui option', () => {
+    const wrapper = shallowMount(HeaderSwitch, {
+      store: new Vuex.Store({
+        state: {
+          displayHeader: true,
+          displayUI: false,
+        },
+      }),
+      localVue,
+      i18n,
+    });
+
+    expect(wrapper.find('.btn-collapse').classes('collapsed')).toBe(false);
+    expect(wrapper.find('.hide-header').isVisible()).toBe(false);
+    expect(wrapper.find('.show-header').exists()).toBe(false);
   });
 });

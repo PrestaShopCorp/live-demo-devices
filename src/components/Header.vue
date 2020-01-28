@@ -1,5 +1,5 @@
 <template>
-  <div id="header" v-show="displayHeader">
+  <div id="header" v-show="displayHeader && displayUI">
     <div id="logo" class="block_header">
     <img src="../assets/logo_prestashop.png" />
     </div>
@@ -34,11 +34,11 @@ import DeviceButton from './DeviceButton.vue';
 export default {
   name: 'Header',
   computed: {
-    ...mapState(['device', 'displayHeader']),
+    ...mapState(['device', 'displayHeader', 'displayUI']),
     demoShopIsBlankPrestashop() {
       return undefined === this.$store.state.factory.params.id_module
         || undefined === this.$store.state.factory.params.module_name_toinstall;
-    }
+    },
   },
   components: {
     DeviceButton,

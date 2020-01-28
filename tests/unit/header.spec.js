@@ -24,4 +24,19 @@ describe('Header.vue', () => {
     expect(wrapper.find('.btn-explore-bo').isVisible()).toBe(true);
     // expect(wrapper.find('.btn-explore-front').isVisible()).toBe(false);
   });
+
+
+  it('hides itself with no_ui option', () => {
+    const wrapper = shallowMount(Header, {
+      store: new Vuex.Store(Object.assign({}, store, {
+        state: {
+          ...store.state,
+          displayUI: false,
+        },
+      })),
+      localVue,
+      i18n,
+    });
+    expect(wrapper.find('#header').isVisible()).toBe(false);
+  });
 });
