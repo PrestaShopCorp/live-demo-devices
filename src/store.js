@@ -9,6 +9,7 @@ export default {
     ready: false,
     device: 'desktop',
     displayHeader: true,
+    displayUI: true,
     links: {
       front: '',
       back: '',
@@ -25,6 +26,9 @@ export default {
   mutations: {
     displayDemoOn: (state, device) => {
       state.device = device;
+    },
+    hideUi: (state) => {
+      state.displayUI = false;
     },
     toggleHeaderVisibility: (state) => {
       state.displayHeader = !state.displayHeader;
