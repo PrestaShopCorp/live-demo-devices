@@ -7,7 +7,7 @@
           <p v-show="noShopAssigned">{{ $t("creating shop") }}</p>
         </div>
       </div>
-      <iframe id="framelive" name="framelive" frameBorder="0"
+      <iframe title="Frame of demo shop" id="framelive" name="framelive" frameBorder="0"
         @load="setIframeReady" :src="iframeUrl"
       ></iframe>
     </div>
