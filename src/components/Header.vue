@@ -9,7 +9,7 @@
       <DeviceButton deviceTrigger="tablet-v" icon="&#xE32F;"/>
       <DeviceButton deviceTrigger="mobile" icon="&#xE325;"/>
     </ul>
-    <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" href="http://www.prestashop.com/" rel="noopener">
+    <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" href="https://www.prestashop.com/" rel="noopener">
       {{ $t("start") }}
     </a>
     <router-link to="back" class="btn btn-explore btn-visible-small btn-explore-bo"
