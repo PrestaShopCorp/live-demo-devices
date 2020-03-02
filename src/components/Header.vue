@@ -1,7 +1,7 @@
 <template>
   <div id="header" v-show="displayHeader && displayUI">
     <div id="logo" class="block_header">
-    <img src="../assets/logo_prestashop.png" />
+    <img src="../assets/logo_prestashop.png" alt="PrestaShop logo" />
     </div>
     <ul id="devices">
       <DeviceButton deviceTrigger="desktop" icon="&#xE30C;" />
@@ -9,7 +9,7 @@
       <DeviceButton deviceTrigger="tablet-v" icon="&#xE32F;"/>
       <DeviceButton deviceTrigger="mobile" icon="&#xE325;"/>
     </ul>
-    <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" href="http://www.prestashop.com/">
+    <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" href="https://www.prestashop.com/" rel="noopener">
       {{ $t("start") }}
     </a>
     <router-link to="back" class="btn btn-explore btn-visible-small btn-explore-bo"
