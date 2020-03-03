@@ -37,6 +37,7 @@ export default {
     ...mapState(['device', 'displayHeader', 'displayUI']),
     demoShopIsBlankPrestashop() {
       return undefined === this.$store.state.factory.params.id_module
+        || undefined === this.$store.state.factory.params.id_module_showcased
         || undefined === this.$store.state.factory.params.module_name_toinstall;
     },
   },

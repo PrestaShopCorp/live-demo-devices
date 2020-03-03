@@ -56,8 +56,10 @@ export default {
     requestMachine: ({ commit, state }, payload) => {
       state.factory.params = Object.assign({}, state.factory.params, {
         id_module: payload.idmodule,
+        id_module_showcased: payload.id_module_showcased,
         module_name_toinstall: payload.moduleNameToinstall,
       });
+
       Vue.http.post(
         `${state.factory.apiEndpoint}machine`,
         state.factory.params,

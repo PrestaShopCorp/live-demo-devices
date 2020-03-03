@@ -44,6 +44,7 @@ export default {
     if (this.$route !== undefined && this.$route.query !== undefined) {
       payload.idmodule = this.$route.query.idmodule;
       payload.moduleNameToinstall = this.$route.query.module_name_toinstall;
+      payload.id_module_showcased = this.$route.query.id_module_showcased;
 
       if (this.$route.query.no_ui !== undefined) {
         this.$store.commit('hideUi');
