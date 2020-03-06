@@ -41,8 +41,8 @@ export default {
     },
     setShopUrl: (state, payload) => {
       state.links = {
-        front: `https:/${payload.domain}.${baseEndpoint}/${i18n.locale}/`,
-        back: `https:/${payload.domain}.${baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo`,
+        front: `https:/${payload.domain}.${baseEndpoint}/${i18n.locale}/?id_module_showcased=${payload.id_module_showcased}`,
+        back: `https:/${payload.domain}.${baseEndpoint}/admin-dev/index.php?controller=AdminLogin&email=demo${i18n.locale}@prestashop.com&password=prestashop_demo&id_module_showcased=${payload.id_module_showcased}`,
       };
     },
     fallbackToOldDemo: (state) => {
@@ -56,7 +56,6 @@ export default {
     requestMachine: ({ commit, state }, payload) => {
       state.factory.params = Object.assign({}, state.factory.params, {
         id_module: payload.idmodule,
-        id_module_showcased: payload.id_module_showcased,
         module_name_toinstall: payload.moduleNameToinstall,
       });
 
@@ -81,7 +80,7 @@ export default {
             if (headResponse.status !== 502) {
               // Webserver answered, cancel all checks and display the shop
               clearTimeout(timeout);
-              commit('setShopUrl', { domain: container.name });
+              commit('setShopUrl', { domain: container.name, id_module_showcased: payload.id_module_showcased });
               clearInterval(recurrentCheck);
             }
           }).catch(() => {});
