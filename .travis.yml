@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "lts/*"
+services:
+  - xvfb
+cache:
+  directories:
+  - node_modules
+install:
+  - npm install
+script:
+  - npm run test:unit
+  - npm run test:e2e

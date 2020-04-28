@@ -16,21 +16,20 @@
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
-@import "compass";
-@import "compass/reset";
 
 @font-face {
 	font-family: 'Montserrat';
-	src:	url(/fonts/montserrat/montserrat-regular-webfont.eot);
-	src:	url(/fonts/montserrat/montserrat-regular-webfont.eot?#iefix) format('embedded-opentype'),
-				url(/fonts/montserrat/montserrat-regular-webfont.woff2) format('woff2'),
-				url(/fonts/montserrat/montserrat-regular-webfont.woff) format('woff'),
-				url(/fonts/montserrat/montserrat-regular-webfont.ttf) format('truetype');
+	src:	url(../public/montserrat/montserrat-regular-webfont.eot);
+	src:	url(../public/montserrat/montserrat-regular-webfont.eot?#iefix) format('embedded-opentype'),
+				url(../public/montserrat/montserrat-regular-webfont.woff2) format('woff2'),
+				url(../public/montserrat/montserrat-regular-webfont.woff) format('woff'),
+				url(../public/montserrat/montserrat-regular-webfont.ttf) format('truetype');
 	font-weight: normal;
 	font-style: normal;
 	}
 
 body, html{
+    margin: 0;
 	height: 100%;
 	font-size: 16px;
 	font-family: Montserrat, arial, sans-serif;
@@ -45,43 +44,72 @@ body, html{
 		min-width: 550px;
 	}
 }
-.hide{
-	display: none;
+#app {
+	height: 100%;
 }
-#header{
+#app, #header {
+	width: 100%;
+}
+#header {
 	position: relative;
 	top: 0;
 	left: 0;
-	width: 100%;
+	height: 100px;
 	background-color: #251b5b;
 	z-index: 10;
-	height: 100px;
 	a.btn {
 		color: #ffffff;
 		text-transform: uppercase;
 		background-color: transparent;
-		padding: 20px 40px;
+		padding: 20px 30px;
+		max-width: 200px;
 		border: solid 1px #ffffff;
 		font-size: 0.875rem;
 		font-weight: normal;
 		text-decoration: none;
+		text-align: center;
 		float: right;
 		position: relative;
 		margin: 22px 18px 22px 0;
 		transition: background-color .3s linear;
+
+		img {
+			display: none;
+		}
+
+		&.router-link-active {
+			display: none;
+		}
 		&:hover{
 			background-color: #ffffff;
 			color: #251b5b;
 		}
-		@media (max-width: 600px){
-			display: none;
+		// Tablet
+		@media (max-width: 1064px) {
+			max-width: 135px;
+			padding: 10px;
 		}
-		&.btn-download{
+		&.btn-download {
 			background-color: #df0067;
 			border-color: #df0067;
 			color: #ffffff;
 			&:hover{
 				background-color: #e53385;
+			}
+			@media (max-width: 600px){
+				display: none;
+			}
+		}
+		&.btn-visible-small {
+			@media (max-width: 600px) {
+				span {
+					display: none;
+				}
+				border: none;
+				margin: 10px;
+				img {
+					display: block;
+				}
 			}
 		}
 	}
@@ -99,15 +127,13 @@ body, html{
 	color: #ffffff;
 	font-size: 0.75rem;
 	text-align: center;
+	cursor: pointer;
 	&::before{
 		content:"\E316";
 		font-family: 'Material Icons';
 		vertical-align: middle;
 		font-size: 1.25rem;
 		margin: 0 5px 0 -5px;
-	}
-	.show-header {
-		display: none;
 	}
 	&.collapsed{
 		top: 0;
@@ -123,20 +149,17 @@ body, html{
 		}
 	}
 }
-#logo{
+
+#logo {
 	width: 243px;
-	@media (max-width: 600px){
-		margin: 0 auto;
+	img {
+		position: relative;
+		max-width: 100%;
+		top: 27px;
+		left: 15px;
+		float: left;
+		height: 46px;
 	}
-}
-#logo img{
-	position: relative;
-	max-width: 100%;
-	top: 27px;
-	left: 15px;
-	float: left;
-	height: 46px;
-	margin-right: 80px;
 }
 #devices{
 	float: left;
@@ -144,6 +167,7 @@ body, html{
 	margin: 0;
 	list-style: none;
 	margin-top: 27px;
+	margin-left: 80px;
 	i {
 		font-size: 40px;
 	}
@@ -153,108 +177,119 @@ body, html{
 		margin-right: 10px;
 		a {
 			color: #ffffff;
-			@include single-transition(all,.5s,ease-in-out);
+			transition: all .5s ease-in-out;
 			&.active, &:hover {
 				color: #df0067;
 			}
 		}
 	}
-	@media (max-width: 900px){
+	@media (max-width: 991.98px) {
 		display: none;
 	}
 	.tablet-v i {
 		transform: rotate(90deg);
 	}
 }
-#devices a, #devices a img{
+#devices a, #devices a img {
 	text-decoration: none;
 	border: none;
+	cursor: pointer;
 }
-#loadingMessage{
-	position: fixed;
-	top: 150px;
-	display: block;
-	padding: 4px;
-	background-color: white;
-	left: calc(50% - 40px/2);
-	z-index: 9999;
-	text-align: center;
-	@include border-radius(5px);
-	@include box-shadow(0 0 15px black);
+.loadingMessageWrapper {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	width:100%;
+	margin-top: 10px;
+
+	#loadingMessage{
+		float: left;
+		padding: 4px;
+		background-color: white;
+		z-index: 9999;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow: 0 0 15px black;
+
+		p {
+			margin: 10px;
+		}
+	}
 }
 #iframe-container{
 	position: relative;
 	z-index: 9;
-	@include single-transition(all,0.2s,ease-in-out);
-	#iframe-wrapper{
+	transition: all 0.2s ease-in-out;
+	#iframe-wrapper {
 		margin: 0 auto;
-		@include single-transition(all,0.2s,ease-in-out);
+		transition: all 0.2s ease-in-out;
 		iframe{
 			display: block;
 			position: relative;
 			width: 100%;
 			height: 100%;
 			background-color: #333333;
-			@include single-transition(all,0.1s,ease-out);
+			transition: all 0.1s ease-out;
 		}
 	}
-}
-#iframe-container.desktop{
-	height: calc(100% - 80px);
-	width: 100%;
-	#iframe-wrapper{
+	&.desktop {
+		position: absolute;
+		height: calc(100% - 100px);
 		width: 100%;
-		height: 100%;
-		iframe{
-			top: 0;
+		#iframe-wrapper{
+			width: 100%;
+			height: 100%;
+			iframe{
+				top: 0;
+			}
+		}
+		&.full-screen {
+			height: 100%;
+			transition: none;
 		}
 	}
-}
-body.collapsed #iframe-container{
-	height: 100%;
-}
-
-#iframe-container.tablet-h{
-	top: 20px;
-	height: 849px;
-	width: 100%;
-	background: url(/img/view-tablet-h.svg) top center no-repeat;
-	#iframe-wrapper{
-		display: block;
-		width: 1024px;
-		height: 768px;
-		iframe{
-			top: 30px;
-			left: -20px;
+	&.tablet-h {
+		top: 20px;
+		height: 849px;
+		width: 100%;
+		background: url(./assets/view-tablet-h.svg) top center no-repeat;
+		#iframe-wrapper{
+			display: block;
+			width: 1024px;
+			height: 768px;
+			iframe{
+				top: 30px;
+				left: -20px;
+			}
 		}
 	}
-}
-#iframe-container.tablet-v{
-	top: 10px;
-	height: 1135px;
-	width: 100%;
-	background: url(/img/view-tablet-v.svg) top center no-repeat;
-	#iframe-wrapper{
-		display: block;
-		width: 768px;
-		height: 1024px;
-		iframe{
-			top: 31px;
+	&.tablet-v {
+		top: 10px;
+		height: 1135px;
+		width: 100%;
+		background: url(./assets/view-tablet-v.svg) top center no-repeat;
+		#iframe-wrapper{
+			display: block;
+			width: 768px;
+			height: 1024px;
+			iframe{
+				top: 31px;
+			}
 		}
 	}
-}
-#iframe-container.mobile{
-	top: 10px;
-	height: 910px;
-	width: 100%;
-	background: url(/img/view-mobile.png) top center no-repeat;
-	#iframe-wrapper{
-		display: block;
-		height: 595px;
-		width: 335px;
-		position: relative;
-		iframe{
-			top: 149px;
+	&.mobile{
+		top: 10px;
+		height: 765px;
+		width: 100%;
+		background: url(./assets/view-mobile.svg) top center no-repeat;
+		#iframe-wrapper{
+			display: block;
+			height: 667px;
+			width: 375px;
+			position: relative;
+			iframe{
+				top: 33px;
+			}
 		}
 	}
 }

@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  node:
+    image: node:12
+    container_name: live-demo-devices
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    environment:
+      PATH: /var/www/html/_dev/node_modules/.bin/:$PATH
+    ports:
+      - 8080:8080
+    entrypoint:
+      - bash
+      - entrypoint.sh
