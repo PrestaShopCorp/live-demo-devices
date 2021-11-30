@@ -17,22 +17,13 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-@font-face {
-	font-family: 'Montserrat';
-	src:	url(../public/montserrat/montserrat-regular-webfont.eot);
-	src:	url(../public/montserrat/montserrat-regular-webfont.eot?#iefix) format('embedded-opentype'),
-				url(../public/montserrat/montserrat-regular-webfont.woff2) format('woff2'),
-				url(../public/montserrat/montserrat-regular-webfont.woff) format('woff'),
-				url(../public/montserrat/montserrat-regular-webfont.ttf) format('truetype');
-	font-weight: normal;
-	font-style: normal;
-	}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body, html{
     margin: 0;
 	height: 100%;
 	font-size: 16px;
-	font-family: Montserrat, arial, sans-serif;
+	font-family: Inter, arial, sans-serif;
 	background-color: #ece9e9;
 	&.framed-tablet-v{
 		min-width: 1000px;
@@ -59,19 +50,19 @@ body, html{
 	z-index: 10;
 	a.btn {
 		color: #ffffff;
-		text-transform: uppercase;
 		background-color: transparent;
-		padding: 20px 30px;
+		padding: 16px 24px;
 		max-width: 200px;
 		border: solid 1px #ffffff;
 		font-size: 0.875rem;
-		font-weight: normal;
+		font-weight: 700;
 		text-decoration: none;
 		text-align: center;
 		float: right;
 		position: relative;
-		margin: 22px 18px 22px 0;
+		margin: 25px 18px 25px 0;
 		transition: background-color .3s linear;
+		border-radius: 8px;
 
 		img {
 			display: none;
