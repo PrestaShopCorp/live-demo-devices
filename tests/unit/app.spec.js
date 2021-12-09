@@ -2,7 +2,7 @@ import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import App from '@/App.vue';
-import Header from '@/components/Header.vue';
+import DemoHeader from '@/components/DemoHeader.vue';
 import HeaderSwitch from '@/components/HeaderSwitch.vue';
 import store from '@/store';
 
@@ -16,7 +16,7 @@ describe('App.vue', () => {
       store: new Vuex.Store(store),
       localVue,
     });
-    expect(wrapper.find(Header).is(Header)).toBe(true);
+    expect(wrapper.find(DemoHeader).is(DemoHeader)).toBe(true);
     expect(wrapper.find(HeaderSwitch).is(HeaderSwitch)).toBe(true);
   });
 });

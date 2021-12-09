@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Shop from './components/Shop.vue';
+import ShopFrame from './components/ShopFrame.vue';
 import i18n from './i18n';
 
 Vue.use(Router);
@@ -17,7 +17,7 @@ export default new Router({
   },
   {
     path: '/:lang/:view',
-    component: Shop,
+    component: ShopFrame,
     props: true,
     beforeEnter(to, from, next) {
       const { lang, view } = to.params;

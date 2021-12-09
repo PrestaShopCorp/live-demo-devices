@@ -2,7 +2,6 @@ import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import HeaderSwitch from '@/components/HeaderSwitch.vue';
-import store from '@/store';
 import i18n from '@/i18n';
 
 const localVue = createLocalVue();

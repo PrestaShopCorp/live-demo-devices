@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <Header />
+    <DemoHeader />
     <HeaderSwitch />
     <router-view/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue';
+import DemoHeader from './components/DemoHeader.vue';
 import HeaderSwitch from './components/HeaderSwitch.vue';
 
 export default {
   name: 'App',
   components: {
-    Header,
+    DemoHeader,
     HeaderSwitch,
   },
 };

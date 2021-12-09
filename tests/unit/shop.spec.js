@@ -1,7 +1,7 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
-import Shop from '@/components/Shop.vue';
+import ShopFrame from '@/components/ShopFrame.vue';
 import store from '@/store';
 import i18n from '@/i18n';
 
@@ -9,17 +9,18 @@ const localVue = createLocalVue();
 localVue.use(Vuex);
 localVue.use(VueRouter);
 
-describe('Shop.vue', () => {
+describe('ShopFrame.vue', () => {
   it('renders the ready spinner by default', () => {
-    const wrapper = shallowMount(Shop, {
-      store: new Vuex.Store(Object.assign({}, store, {
+    const wrapper = shallowMount(ShopFrame, {
+      store: new Vuex.Store({
+        ...store,
         actions: {
           requestMachine: () => {},
         },
         mutations: {
           setBaseEndpoint: () => {},
         },
-      })),
+      }),
       localVue,
       i18n,
     });
@@ -28,7 +29,7 @@ describe('Shop.vue', () => {
   });
 
   it('removes the spinner when ready', () => {
-    const wrapper = shallowMount(Shop, {
+    const wrapper = shallowMount(ShopFrame, {
       store: new Vuex.Store({
         state: {
           ready: true,
@@ -53,15 +54,16 @@ describe('Shop.vue', () => {
   });
 
   it('displays the message at page load', () => {
-    const wrapper = shallowMount(Shop, {
-      store: new Vuex.Store(Object.assign({}, store, {
+    const wrapper = shallowMount(ShopFrame, {
+      store: new Vuex.Store({
+        ...store,
         actions: {
           requestMachine: () => {},
         },
         mutations: {
           setBaseEndpoint: () => {},
         },
-      })),
+      }),
       localVue,
       i18n,
     });
@@ -70,7 +72,7 @@ describe('Shop.vue', () => {
   });
 
   it('only displays the spinner (not the message) when switching interfaces', () => {
-    const wrapper = shallowMount(Shop, {
+    const wrapper = shallowMount(ShopFrame, {
       store: new Vuex.Store({
         state: {
           ready: false,

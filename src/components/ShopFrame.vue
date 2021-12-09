@@ -18,7 +18,7 @@
 import { mapState } from 'vuex';
 
 export default {
-  name: 'Shop',
+  name: 'ShopFrame',
   props: ['view'],
   computed: {
     iframeUrl() {

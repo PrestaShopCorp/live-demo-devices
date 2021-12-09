@@ -7,7 +7,7 @@ module.exports = {
   },
   chainWebpack: (config) => {
     config.plugin('define').tap((definitions) => {
-      definitions[0]['process.env']['MS_DOMAIN'] = JSON.stringify(process.env.MS_DOMAIN);
+      definitions[0]['process.env'].MS_DOMAIN = JSON.stringify(process.env.MS_DOMAIN);
       return definitions;
     });
   },

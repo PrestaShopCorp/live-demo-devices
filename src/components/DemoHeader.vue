@@ -32,7 +32,7 @@ import { mapState } from 'vuex';
 import DeviceButton from './DeviceButton.vue';
 
 export default {
-  name: 'Header',
+  name: 'DemoHeader',
   computed: {
     ...mapState(['device', 'displayHeader', 'displayUI']),
     demoShopIsBlankPrestashop() {
