@@ -1,7 +1,9 @@
 <template>
   <div id="header" v-show="displayHeader && displayUI">
     <div id="logo" class="block_header">
-    <img src="../assets/logo_prestashop.png" alt="PrestaShop logo" />
+      <a :href="`https://www.prestashop.com/${locale}/`">
+        <img src="../assets/logo_prestashop.png" alt="PrestaShop logo" />
+      </a>
     </div>
     <ul id="devices">
       <DeviceButton deviceTrigger="desktop" icon="&#xE30C;" />
@@ -9,7 +11,7 @@
       <DeviceButton deviceTrigger="tablet-v" icon="&#xE32F;"/>
       <DeviceButton deviceTrigger="mobile" icon="&#xE325;"/>
     </ul>
-    <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" href="https://www.prestashop.com/" rel="noopener">
+    <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" :href="`https://www.prestashop.com/${locale}/download`" rel="noopener">
       {{ $t("start") }}
     </a>
     <router-link to="back" class="btn btn-explore btn-visible-small btn-explore-bo"
@@ -30,6 +32,7 @@
 <script>
 import { mapState } from 'vuex';
 import DeviceButton from './DeviceButton.vue';
+import i18n from '../i18n';
 
 export default {
   name: 'DemoHeader',
@@ -39,6 +42,9 @@ export default {
       return undefined === this.$store.state.factory.params.id_module
         || undefined === this.$store.state.factory.params.id_module_showcased
         || undefined === this.$store.state.factory.params.module_name_toinstall;
+    },
+    locale() {
+      return i18n.locale;
     },
   },
   components: {
