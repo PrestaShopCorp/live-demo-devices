@@ -16,7 +16,7 @@ describe('DeviceButton.vue', () => {
     });
     expect(wrapper.find('.change-device').classes(deviceTrigger)).toBe(true);
     // Check icon value is not escaped.
-    expect(wrapper.find('.material-icons').html()).toBe('<i class="material-icons"></i>');
+    expect(wrapper.find('.material-symbols-outlined').html()).toBe('<i class="material-symbols-outlined"></i>');
   });
 
   it('is active when state matches', () => {
