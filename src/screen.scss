@@ -17,14 +17,15 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
 body, html{
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 	height: 100%;
 	font-size: 16px;
-	font-family: Inter, arial, sans-serif;
+	font-family: 'IBM Plex Sans', sans-serif;
 	background-color: #ece9e9;
+  color: #1D1D1B;
+
 	&.framed-tablet-v{
 		min-width: 1000px;
 	}
@@ -38,31 +39,57 @@ body, html{
 #app {
 	height: 100%;
 }
-#app, #header {
-	width: 100%;
-}
+
 #header {
-	position: relative;
-	top: 0;
-	left: 0;
-	height: 100px;
-	background-color: #011638;
+	height: 52px;
+	background-color: #1d1d1b;
 	z-index: 10;
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  align-items: center;
+  padding: 24px;
+
 	a.btn {
-		color: #ffffff;
-		background-color: transparent;
-		padding: 16px 24px;
-		max-width: 200px;
-		border: solid 1px #ffffff;
 		font-size: 0.875rem;
-		font-weight: 700;
-		text-decoration: none;
-		text-align: center;
-		float: right;
-		position: relative;
-		margin: 25px 18px 25px 0;
-		transition: background-color .3s linear;
-		border-radius: 8px;
+		transition: all .2s linear;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding-left: 14px;
+    padding-right: 14px;
+    
+    &.btn-download {
+      background-color: white;
+      color: #1D1D1B;
+
+      &:hover{
+        background-color: #EEE;
+      }
+      &:active {
+        background-color: #DDD;
+      }
+    }
+
+    &.btn-explore {
+      color: white;
+      border: white 1px solid;
+      box-sizing: border-box;
+
+      &:hover {
+        color: #DDD;
+        border-color: #DDD;
+      }
+
+      &:active {
+        color: #EEE;
+        border-color: #EEE;
+      }
+    }
 
 		img {
 			display: none;
@@ -71,22 +98,8 @@ body, html{
 		&.router-link-active {
 			display: none;
 		}
-		&:hover{
-			background-color: #ffffff;
-			color: #251b5b;
-		}
-		// Tablet
-		@media (max-width: 1064px) {
-			max-width: 135px;
-			padding: 10px;
-		}
+
 		&.btn-download {
-			background-color: #df0067;
-			border-color: #df0067;
-			color: #ffffff;
-			&:hover{
-				background-color: #e53385;
-			}
 			@media (max-width: 600px){
 				display: none;
 			}
@@ -97,24 +110,28 @@ body, html{
 					display: none;
 				}
 				border: none;
-				margin: 10px;
 				img {
 					display: block;
 				}
 			}
 		}
 	}
+
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.btn-collapse{
+
+.btn-collapse {
 	position: absolute;
-	background-color: rgba(37, 27, 91, 0.4);
+	background-color: #5E5E5E;
 	top: 100px;
 	left: 0;
 	width: 87px;
 	height: 32px;
 	z-index: 9999;
 	line-height: 32px;
-		text-decoration: none;
+	text-decoration: none;
 	color: #ffffff;
 	font-size: 0.75rem;
 	text-align: center;
@@ -141,50 +158,43 @@ body, html{
 	}
 }
 
-#logo {
-	width: 243px;
-	img {
-		position: relative;
-		max-width: 100%;
-		top: 27px;
-		left: 15px;
-		float: left;
-	}
-}
 #devices{
-	float: left;
-	padding: 0;
-	margin: 0;
 	list-style: none;
-	margin-top: 27px;
-	margin-left: 80px;
+  display: flex;
+  gap: 12px;
+  padding-left: 0;
+  margin-left: 48px;
+  margin-top: 0;
+  margin-bottom: 0;
+
 	i {
 		font-size: 40px;
 	}
 	li {
-		display: inline-block;
-		float: left;
-		margin-right: 10px;
 		a {
 			color: #ffffff;
-			transition: all .5s ease-in-out;
+			transition: all .2s ease-in-out;
 			&.active, &:hover {
-				color: #df0067;
+				color: #5C92AA;
 			}
 		}
 	}
 	@media (max-width: 991.98px) {
 		display: none;
 	}
-	.tablet-v i {
-		transform: rotate(90deg);
-	}
 }
 #devices a, #devices a img {
-	text-decoration: none;
-	border: none;
 	cursor: pointer;
 }
+
+#buttons {
+  display: flex;
+  gap: 12px;
+  @media(max-width: 1064px) {
+    justify-content: end;
+  }
+}
+// TODO
 .loadingMessageWrapper {
 	position: absolute;
 	display: flex;
