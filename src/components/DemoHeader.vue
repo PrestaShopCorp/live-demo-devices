@@ -11,7 +11,7 @@
       <DeviceButton deviceTrigger="tablet-v" icon="smartphone"/>
       <DeviceButton deviceTrigger="mobile" icon="phone_iphone"/>
     </ul>
-    <div  id="buttons">
+    <div id="buttons">
       <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" :href="`https://www.prestashop.com/${locale}/download`" rel="noopener">
         {{ $t("start") }}
       </a>
