@@ -2,7 +2,7 @@ import Vue from 'vue';
 import io from 'socket.io-client';
 import i18n from './i18n';
 
-const baseEndpoint = process.env.MS_DOMAIN || 'machine-shuffle.prestashop.net';
+const baseEndpoint = process.env.MS_DOMAIN || 'demo.prestashop.com';
 
 export default {
   state: {
