@@ -123,6 +123,10 @@ body, html{
 }
 
 .btn-collapse {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 	position: absolute;
 	background-color: #5E5E5E;
 	top: 100px;
@@ -136,13 +140,6 @@ body, html{
 	font-size: 0.75rem;
 	text-align: center;
 	cursor: pointer;
-	&::before{
-		content:"\E316";
-		font-family: 'Material Icons';
-		vertical-align: middle;
-		font-size: 1.25rem;
-		margin: 0 5px 0 -5px;
-	}
 	&.collapsed{
 		top: 0;
 		.show-header {
@@ -150,10 +147,6 @@ body, html{
 		}
 		.hide-header {
 			display: none;
-		}
-		&::before{
-			content:"\E313";
-			font-family: 'Material Icons';
 		}
 	}
 }
