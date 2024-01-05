@@ -4,7 +4,7 @@
       :class="[!displayHeader ? 'collapsed': '']"
       v-show="displayUI"
   >
-    <i class="material-symbols-outlined" v-html="icon"></i>
+    <i class="material-symbols-outlined">{{ icon }}</i>
     <span class="hide-header" v-if="displayHeader">{{ $t("hide") }}</span>
     <span class="show-header" v-else>{{ $t("show") }}</span>
   </a>
