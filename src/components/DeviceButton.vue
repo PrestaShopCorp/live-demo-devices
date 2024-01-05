@@ -7,7 +7,7 @@
       ]"
       v-on:click="displayOn(deviceTrigger)"
     >
-      <i class="material-symbols-outlined" v-html="icon"></i>
+      <i class="material-symbols-outlined">{{ icon }}</i>
     </a>
   </li>
 </template>
