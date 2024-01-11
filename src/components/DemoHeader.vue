@@ -14,17 +14,20 @@
     <div id="buttons">
       <a v-if="demoShopIsBlankPrestashop" class="btn btn-download" target="_blank" :href="`https://www.prestashop.com/${locale}/download`" rel="noopener">
         {{ $t("start") }}
+        <span class="material-symbols-outlined">arrow_right</span>
       </a>
       <router-link to="back" class="btn btn-explore btn-visible-small btn-explore-bo"
         @click.native="updateIframeLink"
       >
         <span>{{ $t("explore-back") }}</span>
+        <span class="material-symbols-outlined">arrow_right</span>
         <img :alt="$t('explore-back')" src="../../public/switch-BO-FO.png" />
       </router-link>
       <router-link to="front" class="btn btn-explore btn-visible-small btn-explore-front"
         @click.native="updateIframeLink"
       >
         <span>{{ $t("explore-front") }}</span>
+        <span class="material-symbols-outlined">arrow_right</span>
         <img :alt="$t('explore-front')" src="../../public/switch-BO-FO.png" />
       </router-link>
     </div>
