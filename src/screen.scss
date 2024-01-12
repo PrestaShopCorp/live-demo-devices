@@ -62,10 +62,15 @@ body, html{
     text-decoration: none;
     padding-left: 14px;
     padding-right: 14px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .5px;
     
     &.btn-download {
       background-color: white;
       color: #1D1D1B;
+      
 
       &:hover{
         background-color: #EEE;
