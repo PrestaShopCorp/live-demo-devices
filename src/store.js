@@ -18,7 +18,7 @@ export default {
       apiEndpoint: `https://api.${baseEndpoint}/api/v1/`,
       socketEndpoint: `https://socket.${baseEndpoint}/`,
       params: {
-        version: '8',
+        version: '9',
         api_key: 'anonymous',
       },
     },
